@@ -6,12 +6,6 @@ export default defineConfig({
     server: {
         strictPort: "true",
         port: "5173",
-        hmr: {
-            host: "localhost",
-            protocol: "ws",
-            clientPort: "5173",
-            port: "5173",
-        },
         allowedHosts: [
             '.planetinkgames.fun',
         ],
