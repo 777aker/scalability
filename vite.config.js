@@ -2,7 +2,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-    base: '/scalability/',
+    base: '/scalability',
     server: {
         allowedHosts: [
             '.planetinkgames.fun',
