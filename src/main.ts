@@ -1,8 +1,8 @@
-import { setEngine } from "/src/app/getEngine";
-import { LoadScreen } from "/src/app/screens/LoadScreen";
-import { MainScreen } from "/src/app/screens/main/MainScreen";
-import { userSettings } from "/src/app/utils/userSettings";
-import { CreationEngine } from "/src/engine/engine";
+import { setEngine } from "/scalability/src/app/getEngine";
+import { LoadScreen } from "/scalability/src/app/screens/LoadScreen";
+import { MainScreen } from "/scalability/src/app/screens/main/MainScreen";
+import { userSettings } from "/scalability/src/app/utils/userSettings";
+import { CreationEngine } from "/scalability/src/engine/engine";
 
 /**
  * Importing these modules will automatically register there plugins with the engine.

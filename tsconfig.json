@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./scalability",
     "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
