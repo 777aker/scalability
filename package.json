@@ -5,7 +5,9 @@
   "name": "scalability",
   "version": "1.0.0",
   "main": "main.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "vite": "^7.0.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
