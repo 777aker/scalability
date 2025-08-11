@@ -1,19 +1,17 @@
-// Step 1
-import { Application } from "pixi.js";
+import { Application, Graphics } from "pixi.js";
+import { SnakeGame } from "./snake";
 
 (async () => {
-  // Step 2
   const app = new Application();
-
-  // Step 3
   await app.init({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    resizeTo: window,
+    antialias: true,
     backgroundColor: 0x34495e,
   });
 
   app.canvas.style.position = "absolute";
-
-  // Step 4
   document.body.appendChild(app.canvas);
+
+  const snake_game = new SnakeGame();
+  snake_game.run_snake(app);
 })();
