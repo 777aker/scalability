@@ -1,12 +1,12 @@
 import { Application, Graphics } from "pixi.js";
+import { Window } from "./window";
 
-export class SnakeGame {
-  constructor() {}
-  run_snake(app) {
-    const rectangle = new Graphics().rect(700, 200, 100, 150).fill({
-      color: 0x9b59b6,
-      alpha: 0.5,
-    });
-    app.stage.addChild(rectangle);
+export class SnakeGame extends Window {
+  constructor(x, y, width, height, bg_color, st_color, app) {
+    super(x, y, width, height, bg_color, st_color, app);
+  }
+
+  run_snake() {
+    this.draw_window();
   }
 }
