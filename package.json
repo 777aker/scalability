@@ -1,13 +1,8 @@
 {
-  "dependencies": {
-    "pixi.js": "^8.11.0"
-  },
   "name": "scalability",
   "version": "1.0.0",
+  "description": "Web based incremental game using Pixi.js.",
   "main": "main.js",
-  "devDependencies": {
-    "vite": "^7.0.5"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,11 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/777aker/scalability.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/777aker/scalability/issues"
   },
   "homepage": "https://github.com/777aker/scalability#readme",
-  "description": ""
+  "devDependencies": {
+    "vite": "^6.3.5"
+  },
+  "dependencies": {
+    "pixi.js": "^8.12.0"
+  }
 }
