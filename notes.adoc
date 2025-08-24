@@ -1,0 +1,4 @@
+Use pixi ui for ui elements
+
+Use containers for each window and give them draggable abilities
+Probably just need one class that instantiates containers and adds necessary code and such
