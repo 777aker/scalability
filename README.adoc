@@ -4,6 +4,7 @@ Web based incremental game using Pixi.js.
 
 ## Running
 
+`npm install`
 `npx vite`
 
 ## Appendix
