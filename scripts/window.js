@@ -103,11 +103,11 @@ export class Window {
 
   // How to handle closing the window
   close_window(window_obj) {
-    console.log("Close window not implemented by inherited class");
+    console.warn("Close window not implemented by inherited class");
   }
 
   // What to do each game tick
   tick_window(ticker) {
-    console.log("Tick window not implemented by inherited class");
+    console.warn("Tick window not implemented by inherited class");
   }
 }
