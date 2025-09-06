@@ -8,8 +8,8 @@ kanban-plugin: board
 
 - [ ] Windows
 	- [ ] Close button delete graphics (memory leak if you don't)
-	- [ ] Click on window put on top of draw order
-	- [ ] Test multiple windows
+	- [x] Click on window put on top of draw order
+	- [x] Test multiple windows
 - [ ] Desktop?
 	- [ ] Add open-able apps?
 - [ ] Snake

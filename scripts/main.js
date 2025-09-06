@@ -1,4 +1,4 @@
-import { Application, Graphics } from "pixi.js";
+import { Application, Graphics, RenderLayer } from "pixi.js";
 import { SnakeGame } from "./snake";
 
 // global variable storing mouse so everyone can see where it is
@@ -27,6 +27,7 @@ export function get_mouse() {
   app.stage.addEventListener("pointermove", (e) => {
     mouse_global = e.global;
   });
+  app.stage.sortableChildren = true;
 
   // initialize snake game
   const snake_game = new SnakeGame(app);

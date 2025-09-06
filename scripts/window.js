@@ -19,6 +19,13 @@ export class Window {
       .fill(bg_color)
       .stroke(st_color)
       .setStrokeStyle(5);
+    this.window.eventMode = "static";
+    this.window.on("pointerdown", () => {
+      this.clicked_window(this);
+    });
+    this.window.on("pointerleave", () => {
+      this.left_window(this);
+    });
     this.pixi_app.stage.addChild(this.window);
 
     // button that allows for dragging the window
@@ -95,6 +102,15 @@ export class Window {
       const mouse = get_mouse();
       this.move_window(mouse.x, mouse.y);
     }
+  }
+
+  // When window is clicked set it as active
+  clicked_window(window_obj) {
+    this.window.zIndex = 10;
+  }
+
+  left_window(window_obj) {
+    this.window.zIndex = 5;
   }
 
   /**
