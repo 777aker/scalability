@@ -4,27 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "17f5e6c97a33c397",
+        "id": "0d7fee77fec54293",
         "type": "tabs",
         "children": [
           {
-            "id": "82e955aa74c10a9e",
+            "id": "141ef19d01b47d60",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "task_managing.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "task_managing"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -59,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#test",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -176,9 +166,15 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "82e955aa74c10a9e",
+  "active": "e067e5ee2ff9e357",
   "lastOpenFiles": [
     "task_managing.md",
+    "TODO.md",
+    "Desktop.md",
+    "Snake.md",
+    "Windows.md",
+    "main.css.md",
+    "main.css",
     "Welcome.md"
   ]
 }
