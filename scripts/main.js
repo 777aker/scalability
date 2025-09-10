@@ -1,5 +1,6 @@
 import { Application, Graphics, RenderLayer } from "pixi.js";
 import { SnakeGame } from "./snake";
+import { COLORS } from "./constants";
 
 // global variable storing mouse so everyone can see where it is
 var mouse_global;
@@ -16,7 +17,7 @@ export function get_mouse() {
   await app.init({
     resizeTo: window,
     antialias: true,
-    backgroundColor: 0x2c3e50,
+    backgroundColor: COLORS.wizard_grey,
   });
 
   // set app properties
@@ -26,6 +27,9 @@ export function get_mouse() {
   app.ticker.maxFPS = 60;
   app.stage.addEventListener("pointermove", (e) => {
     mouse_global = e.global;
+  });
+  app.stage.addEventListener("keydown", (e) => {
+    console.log("What the heck");
   });
   app.stage.sortableChildren = true;
 

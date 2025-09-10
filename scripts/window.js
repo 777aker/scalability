@@ -1,12 +1,24 @@
 import { Application, ColorMatrixFilter, Graphics } from "pixi.js";
 import { Button } from "@pixi/ui";
 import { get_mouse } from "./main";
+import { COLORS } from "./constants";
 
 // Base class for windows
 export class Window {
-  // constructor creates window rect, closing square, and draggable top area
+  /**
+   * Constructor for a window object
+   * @param {int} x - x position on screen
+   * @param {int} y - y position on screen
+   * @param {int} width - width of window
+   * @param {int} height - height of window
+   * @param {COLORS} bg_color - background color of the window
+   * @param {COLORS} st_color - stroke color of the window
+   * @param {Application} app - application reference for window to draw to
+   */
   constructor(x, y, width, height, bg_color, st_color, app) {
     // Set class variables
+    this.window_x = x;
+    this.window_y = y;
     this.window_width = width;
     this.window_height = height;
     this.pixi_app = app;
@@ -32,7 +44,7 @@ export class Window {
     // maybe should just be a graphics object with mouse interaction?
     this.window_bar_btn = new Button(
       new Graphics()
-        .rect(0, 0, this.window_width * 0.9, this.window_height * 0.1)
+        .rect(0, 0, this.window_width, this.window_height * 0.1)
         .fill(bg_color)
         .stroke(st_color)
         .setStrokeStyle(5)
@@ -45,38 +57,39 @@ export class Window {
     this.window_bar_btn.view.filters = [dragging_filter];
 
     // add close window button
-    this.window_close_btn = new Button(
-      new Graphics()
-        .rect(
-          this.window_width * 0.9,
-          0,
-          this.window_width * 0.1,
-          this.window_height * 0.1
-        )
-        .fill(0xc0392b)
-        .stroke(st_color)
-        .setStrokeStyle(5)
-    );
-    this.window.addChild(this.window_close_btn.view);
-    this.window_close_btn.onPress.connect(() => {
-      this.close_window(this);
-      this.close_window_super(this);
-    });
+    // this.window_close_btn = new Button(
+    //   new Graphics()
+    //     .rect(
+    //       this.window_width * 0.9,
+    //       0,
+    //       this.window_width * 0.1,
+    //       this.window_height * 0.1
+    //     )
+    //     .fill(0xc0392b)
+    //     .stroke(st_color)
+    //     .setStrokeStyle(5)
+    // );
+    // this.window.addChild(this.window_close_btn.view);
+    // this.window_close_btn.onPress.connect(() => {
+    //   this.close_window(this);
+    //   this.close_window_super(this);
+    // });
 
     this.window.position.set(x, y);
 
     // done initializing start the ticker
     this.pixi_app.ticker.add((ticker) => {
       this.tick_window_super(ticker);
-      this.tick_window(ticker);
     });
   }
 
   // function for moving the window to x, y, centered around draggable window bar
   move_window(x, y) {
+    this.window_x = x;
+    this.window_y = y;
     this.window.position.set(
-      x - this.window_width / 2,
-      y - this.window_height * 0.05
+      this.window_x - this.window_width / 2,
+      this.window_y - this.window_height * 0.05
     );
   }
 
@@ -91,9 +104,9 @@ export class Window {
   }
 
   // function for closing a window
-  close_window_super(window_obj) {
-    console.log("Closed pressed");
-  }
+  // close_window_super(window_obj) {
+  //   console.log("Closed pressed");
+  // }
 
   // what to do on a game tick
   tick_window_super(ticker) {
@@ -118,9 +131,9 @@ export class Window {
    */
 
   // How to handle closing the window
-  close_window(window_obj) {
-    console.warn("Close window not implemented by inherited class");
-  }
+  // close_window(window_obj) {
+  //   console.warn("Close window not implemented by inherited class");
+  // }
 
   // What to do each game tick
   tick_window(ticker) {
