@@ -29,8 +29,12 @@ kanban-plugin: board
 
 - [ ] Snake
 	  - [x] Move-able snake
-	  - [ ] Random Apples
-	  - [ ] Get longer on apples
+	  - [x] Random Apples
+	  - [x] Get longer on apples
+	  - [ ] die on sides
+	  - [ ] die on body hit
+	  - [ ] delete apples on game over
+	  - [ ] track apples
 
 
 ## General Done

@@ -3,6 +3,8 @@ import { Button } from "@pixi/ui";
 import { get_mouse } from "./main";
 import { COLORS } from "./constants";
 
+const BAR_HEIGHT = 30;
+
 // Base class for windows
 export class Window {
   /**
@@ -44,7 +46,7 @@ export class Window {
     // maybe should just be a graphics object with mouse interaction?
     this.window_bar_btn = new Button(
       new Graphics()
-        .rect(0, 0, this.window_width, this.window_height * 0.1)
+        .rect(0, -BAR_HEIGHT, this.window_width, BAR_HEIGHT)
         .fill(bg_color)
         .stroke(st_color)
         .setStrokeStyle(5)
@@ -89,7 +91,7 @@ export class Window {
     this.window_y = y;
     this.window.position.set(
       this.window_x - this.window_width / 2,
-      this.window_y - this.window_height * 0.05
+      this.window_y + BAR_HEIGHT / 2
     );
   }
 

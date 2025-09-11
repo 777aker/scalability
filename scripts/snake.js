@@ -1,4 +1,4 @@
-import { Application, Graphics } from "pixi.js";
+import { Application, Color, Graphics } from "pixi.js";
 import { Window } from "./window";
 import { COLORS } from "./constants";
 import { get_keys_pressed } from "./main";
@@ -9,13 +9,16 @@ export class SnakeGame extends Window {
     super(200, 100, 400, 400, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
 
     // snake variables
-    this.snake_head = -1;
+    this.snake_head_index = -1;
     this.snake_width = 10;
     this.snake_height = 10;
     this.snake_speed = 10;
+    this.apple_size = 10;
     this.snake_time = 0;
     this.snake_body = [];
     this.snake_direction = [1, 0];
+    this.apple_limit = 1;
+    this.apples_spawned = [];
     this.make_snake_segment(this.window_width / 2, this.window_height / 2);
 
     // this.pixi_app.stage.addEventListener("keydown", (event) => {
@@ -40,21 +43,89 @@ export class SnakeGame extends Window {
     }
 
     this.snake_time = 0;
+    this.move_snake();
+
+    // if not at apple limit make an apple
+    if (this.apples_spawned.length < this.apple_limit) {
+      this.make_apple();
+    }
+
+    // check if we died
+    this.check_died();
+  }
+
+  // move the snake
+  move_snake() {
+    // get tail and head
     const snake_tail = this.snake_body[0];
-    const snake_head = this.snake_body[this.snake_head];
-    snake_tail.position.set(
-      snake_head.x + this.snake_direction[0] * this.snake_width,
-      snake_head.y + this.snake_direction[1] * this.snake_height
+    const snake_head = this.snake_body[this.snake_head_index];
+    // move tail to head
+    const new_x = snake_head.x + this.snake_direction[0] * this.snake_width;
+    const new_y = snake_head.y + this.snake_direction[1] * this.snake_height;
+
+    if (this.check_eat_apple(new_x, new_y)) {
+      // if we did eat an apple
+      // make a new head
+      this.make_snake_segment(new_x, new_y);
+    } else {
+      // if we didn't eat an apple
+      // shift the snake body graphics around
+      snake_tail.position.set(new_x, new_y);
+      this.snake_body.shift();
+      this.snake_body.push(snake_tail);
+    }
+  }
+
+  // check for snake death
+  check_died() {
+    // out of bounds
+    // head went into x or y positions
+  }
+
+  // check if intersecting with apple and destroy it if we are
+  check_eat_apple(head_x, head_y) {
+    // check if head intersecting apples spawned
+    for (let i = 0; i < this.apples_spawned.length; i++) {
+      const apple = this.apples_spawned[i];
+      if (head_x == apple.x && head_y == apple.y) {
+        this.window.removeChild(apple);
+        delete this.apples_spawned[i];
+        this.apples_spawned.splice(i, 1);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // make a new apple
+  make_apple() {
+    // pick a random position
+    const x = Math.floor(Math.random() * (this.window_width / this.apple_size));
+    const y = Math.floor(
+      Math.random() * (this.window_height / this.apple_size)
     );
+    // if position in snake body, just give up it'll try again next frame
+    for (let i = 0; i < this.snake_body.length; i++) {
+      if (x == this.snake_body[i].x && y == this.snake_body[i].y) {
+        return;
+      }
+    }
+    const apple = new Graphics()
+      .rect(0, 0, this.apple_size, this.apple_size)
+      .fill(COLORS.carmine_pink);
+    apple.position.set(x * this.apple_size, y * this.apple_size);
+    this.apples_spawned.push(apple);
+    this.window.addChild(apple);
   }
 
   // create graphics object, attach to window, and place in body
   make_snake_segment(x, y) {
     const snake_segment = new Graphics()
-      .rect(x, y, this.snake_width, this.snake_height)
+      .rect(0, 0, this.snake_width, this.snake_height)
       .fill(COLORS.pure_apple);
+    snake_segment.position.set(x, y);
     this.snake_body.push(snake_segment);
-    this.snake_head += 1;
+    this.snake_head_index += 1;
     this.window.addChild(snake_segment);
   }
 
@@ -73,5 +144,10 @@ export class SnakeGame extends Window {
     if (keys_pressed.indexOf("d") !== -1) {
       this.snake_direction = [1, 0];
     }
+  }
+
+  // handle a game over
+  game_over() {
+    console.log("Game Over");
   }
 }
