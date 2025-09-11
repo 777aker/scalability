@@ -9,7 +9,6 @@ export class SnakeGame extends Window {
     super(200, 100, 400, 400, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
 
     // snake variables
-    this.snake_head_index = -1;
     this.snake_width = 10;
     this.snake_height = 10;
     this.snake_speed = 10;
@@ -58,7 +57,7 @@ export class SnakeGame extends Window {
   move_snake() {
     // get tail and head
     const snake_tail = this.snake_body[0];
-    const snake_head = this.snake_body[this.snake_head_index];
+    const snake_head = this.snake_body[this.snake_body.length - 1];
     // move tail to head
     const new_x = snake_head.x + this.snake_direction[0] * this.snake_width;
     const new_y = snake_head.y + this.snake_direction[1] * this.snake_height;
@@ -78,8 +77,24 @@ export class SnakeGame extends Window {
 
   // check for snake death
   check_died() {
+    const head = this.snake_body[this.snake_body.length - 1];
     // out of bounds
-    // head went into x or y positions
+    if (
+      head.x < 0 ||
+      head.y < 0 ||
+      head.x + this.snake_width > this.window_width ||
+      head.y + this.snake_height > this.window_height
+    ) {
+      console.log("%d, %d", head.x, head.y);
+      this.game_over();
+    }
+    // head went into body
+    for (let i = 0; i < this.snake_body.length - 1; i++) {
+      const body = this.snake_body[i];
+      if (body.x == head.x && body.y == head.y) {
+        this.game_over();
+      }
+    }
   }
 
   // check if intersecting with apple and destroy it if we are
@@ -125,7 +140,6 @@ export class SnakeGame extends Window {
       .fill(COLORS.pure_apple);
     snake_segment.position.set(x, y);
     this.snake_body.push(snake_segment);
-    this.snake_head_index += 1;
     this.window.addChild(snake_segment);
   }
 
