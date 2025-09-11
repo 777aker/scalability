@@ -38,6 +38,11 @@ kanban-plugin: board
 	  - [ ] track apples
 
 
+## Bug Fixes
+
+- [ ] Snake - edges seem to be weird. Head is at -10 when it looks like it should be 0
+
+
 ## General Done
 
 - [ ] Windows
@@ -56,6 +61,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false],"new-line-trigger":"enter","tag-colors":[{"tagKey":"#test","color":"rgba(250, 137, 245, 1)","backgroundColor":"rgba(98, 226, 109, 0.1)"}],"tag-sort":[{"tag":"test"}]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false],"new-line-trigger":"enter","tag-colors":[{"tagKey":"#test","color":"rgba(250, 137, 245, 1)","backgroundColor":"rgba(98, 226, 109, 0.1)"}],"tag-sort":[{"tag":"test"}]}
 ```
 %%
