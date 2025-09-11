@@ -1,6 +1,7 @@
 import { Application, Graphics } from "pixi.js";
 import { Window } from "./window";
-import { COLORS, Point } from "./constants";
+import { COLORS } from "./constants";
+import { get_keys_pressed } from "./main";
 
 export class SnakeGame extends Window {
   // initialize snake game
@@ -8,13 +9,13 @@ export class SnakeGame extends Window {
     super(200, 100, 400, 400, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
 
     // snake variables
-    this.snake_head = 0;
+    this.snake_head = -1;
     this.snake_width = 10;
     this.snake_height = 10;
-    this.snake_speed = 25;
+    this.snake_speed = 10;
     this.snake_time = 0;
-    this.snake_direction = [1, 0];
     this.snake_body = [];
+    this.snake_direction = [1, 0];
     this.make_snake_segment(this.window_width / 2, this.window_height / 2);
 
     // this.pixi_app.stage.addEventListener("keydown", (event) => {
@@ -32,6 +33,8 @@ export class SnakeGame extends Window {
   // snake game tick
   tick_window(ticker) {
     this.snake_time += ticker.deltaTime;
+    this.handle_keys();
+
     if (this.snake_time < this.snake_speed) {
       return;
     }
@@ -51,25 +54,24 @@ export class SnakeGame extends Window {
       .rect(x, y, this.snake_width, this.snake_height)
       .fill(COLORS.pure_apple);
     this.snake_body.push(snake_segment);
+    this.snake_head += 1;
     this.window.addChild(snake_segment);
   }
 
-  // key pressed
-  key_down(event, game_obj) {
-    console.log("hey");
-    switch (event.key) {
-      case "w":
-        game_obj.snake_direction = [0, 1];
-        break;
-      case "a":
-        game_obj.snake_direction = [-1, 0];
-        break;
-      case "s":
-        game_obj.snake_direction = [0, -1];
-        break;
-      case "d":
-        game_obj.snake_direction = [1, 0];
-        break;
+  // handle keys
+  handle_keys() {
+    const keys_pressed = get_keys_pressed();
+    if (keys_pressed.indexOf("w") !== -1) {
+      this.snake_direction = [0, -1];
+    }
+    if (keys_pressed.indexOf("a") !== -1) {
+      this.snake_direction = [-1, 0];
+    }
+    if (keys_pressed.indexOf("s") !== -1) {
+      this.snake_direction = [0, 1];
+    }
+    if (keys_pressed.indexOf("d") !== -1) {
+      this.snake_direction = [1, 0];
     }
   }
 }

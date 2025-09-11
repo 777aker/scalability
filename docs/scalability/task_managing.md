@@ -28,7 +28,7 @@ kanban-plugin: board
 ## Game WIP
 
 - [ ] Snake
-	  - [ ] Move-able snake
+	  - [x] Move-able snake
 	  - [ ] Random Apples
 	  - [ ] Get longer on apples
 

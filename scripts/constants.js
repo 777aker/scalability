@@ -64,25 +64,3 @@ export const COLORS = {
   //   concrete: 0x95a5a6, // #95a5a6
   //   asbestos: 0x7f8c8d, // #7f8c8d
 };
-
-// Class for creating and using points
-export class Point {
-  /**
-   * Class for creating and using points
-   * @param {int} x - x position
-   * @param {int} y - y position
-   */
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
-
-  /**
-   * Function for calculating distance
-   * @param {Point} p1 - first point
-   * @param {Point} p2 - second point
-   */
-  distance(p1, p2) {
-    return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
-  }
-}
