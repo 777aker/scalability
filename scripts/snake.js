@@ -2,6 +2,12 @@ import { Application, Color, Graphics } from "pixi.js";
 import { Window } from "./window";
 import { COLORS } from "./constants";
 import { get_keys_pressed } from "./main";
+import {
+  register_apples,
+  add_apples_id,
+  remove_apples_id,
+  get_apples_id,
+} from "./apples";
 
 export class SnakeGame extends Window {
   // initialize snake game
@@ -18,6 +24,7 @@ export class SnakeGame extends Window {
     this.snake_direction = [1, 0];
     this.apple_limit = 1;
     this.apples_spawned = [];
+    this.apples_id = register_apples(0, "snake.png", 200);
     this.make_snake_segment(this.window_width / 2, this.window_height / 2);
 
     // this.pixi_app.stage.addEventListener("keydown", (event) => {
@@ -104,8 +111,10 @@ export class SnakeGame extends Window {
       const apple = this.apples_spawned[i];
       if (head_x == apple.x && head_y == apple.y) {
         this.window.removeChild(apple);
+        this.apples_spawned[i].destroy();
         delete this.apples_spawned[i];
         this.apples_spawned.splice(i, 1);
+        add_apples_id(1, this.apples_id);
         return true;
       }
     }
@@ -162,6 +171,9 @@ export class SnakeGame extends Window {
 
   // handle a game over
   game_over() {
-    console.log("Game Over");
+    // destory and delete all apples graphics
+    // destory and delete all body parts
+    // remove all apples
+    // restart the game
   }
 }

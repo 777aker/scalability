@@ -45,8 +45,8 @@ function keyup(event) {
   app.canvas.style.position = "absolute";
   document.body.appendChild(app.canvas);
   app.stage.eventMode = "static";
-  app.ticker.maxFPS = 30;
-  app.ticker.minFPS = 30;
+  // app.ticker.maxFPS = 30;
+  // app.ticker.minFPS = 30;
   app.stage.addEventListener("pointermove", (e) => {
     mouse_global = e.global;
   });

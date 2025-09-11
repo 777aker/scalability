@@ -6,23 +6,20 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] Scale Tree
+	- [ ] Class that holds scales (upgrades)
+	- [ ] Start up pick which tree you want - initialize that tree
+	- [ ] Scale class
+	    - [ ] How much it costs
+	    - [ ] Icon
+	    - [ ] Position
+	    - [ ] Requirements
+	    - [ ] When unlocked function
 - [ ] Add cards for each game
 
 
 ## General WIP
 
-- [ ] Constants scripts
-	- [ ] make it
-	- [ ] put colors in it
-	- [ ] remove hard coded colors
-- [ ] Scale Tree
-	- [ ] Class that holds scales (upgrades)
-	- [ ] Scale class
-	    - [ ] How much it costs
-	    - [ ] Icon
-	    - [ ] Position
-	    - [ ] Requirement
-	    - [ ] When unlocked function
 
 
 ## Game WIP
@@ -35,7 +32,6 @@ kanban-plugin: board
 	  - [x] die on body hit
 	  - [ ] implement game over function
 	  - [ ] delete apples on game over
-	  - [ ] track apples
 
 
 ## Bug Fixes
@@ -45,15 +41,30 @@ kanban-plugin: board
 
 ## General Done
 
+- [ ] Apples
+	- [x] register apples function
+	- [x] add apples function with id
+	- [x] remove apples function
+	- [x] remove apples function with id
+	- [x] get apples with id
+	- [x] get apples
 - [ ] Windows
 	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable)
 	  - [x] Click on window put on top of draw order
 	  - [x] Test multiple windows
 - [ ] Desktop
 	  - [ ] ~~Add open-able apps?~~ (Can't close them going to be forced open. I live for chaos.)
+- [ ] Constants scripts
+	- [x] make it
+	- [x] put colors in it
+	- [x] remove hard coded colors
 
 
 ## Game Done
+
+
+
+## Bugs Fixed
 
 
 
@@ -61,6 +72,6 @@ kanban-plugin: board
 
 %% kanban:settings
 ```
-{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false],"new-line-trigger":"enter","tag-colors":[{"tagKey":"#test","color":"rgba(250, 137, 245, 1)","backgroundColor":"rgba(98, 226, 109, 0.1)"}],"tag-sort":[{"tag":"test"}]}
+{"kanban-plugin":"board","list-collapse":[false,false,false,false,false,false,false],"new-line-trigger":"enter","tag-colors":[{"tagKey":"#test","color":"rgba(250, 137, 245, 1)","backgroundColor":"rgba(98, 226, 109, 0.1)"}],"tag-sort":[{"tag":"test"}]}
 ```
 %%
