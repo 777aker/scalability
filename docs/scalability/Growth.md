@@ -6,6 +6,7 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] Idle Clicker
 
 
 ## WIP

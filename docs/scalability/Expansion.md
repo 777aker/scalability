@@ -6,6 +6,11 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] Terraria
+- [ ] Crafting
+- [ ] Town Management
+- [ ] Logistics Management
+- [ ] Strikefleet Omega
 
 
 ## WIP

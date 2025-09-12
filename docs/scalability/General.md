@@ -6,6 +6,7 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] Paper planet
 
 
 ## WIP

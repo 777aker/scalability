@@ -6,6 +6,11 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] More Apples per Apple
+- [ ] Storage Limits Increase
+- [ ] More Apples
+- [ ] AI Snake
+- [ ] More Snakes
 
 
 ## WIP
