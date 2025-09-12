@@ -92,7 +92,6 @@ export class SnakeGame extends Window {
       head.x + this.snake_width > this.window_width ||
       head.y + this.snake_height > this.window_height
     ) {
-      console.log("%d, %d", head.x, head.y);
       this.game_over();
     }
     // head went into body
@@ -172,8 +171,22 @@ export class SnakeGame extends Window {
   // handle a game over
   game_over() {
     // destory and delete all apples graphics
+    for (let i = 0; i < this.apples_spawned.length; i++) {
+      this.apples_spawned[i].destroy();
+      delete this.apples_spawned[i];
+    }
+    this.apples_spawned = [];
     // destory and delete all body parts
+    for (let i = 0; i < this.snake_body.length; i++) {
+      this.snake_body[i].destroy();
+      delete this.snake_body[i];
+    }
+    this.snake_body = [];
     // remove all apples
+    const my_apples = get_apples_id(this.apples_id);
+    remove_apples_id(my_apples);
     // restart the game
+    this.make_snake_segment(this.window_width / 2, this.window_height / 2);
+    this.make_apple();
   }
 }

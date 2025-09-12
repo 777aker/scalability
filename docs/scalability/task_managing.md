@@ -24,14 +24,6 @@ kanban-plugin: board
 
 ## Game WIP
 
-- [ ] Snake
-	  - [x] Move-able snake
-	  - [x] Random Apples
-	  - [x] Get longer on apples
-	  - [x] die on sides
-	  - [x] die on body hit
-	  - [ ] implement game over function
-	  - [ ] delete apples on game over
 
 
 ## Bug Fixes
@@ -62,6 +54,14 @@ kanban-plugin: board
 
 ## Game Done
 
+- [ ] Snake
+	  - [x] Move-able snake
+	  - [x] Random Apples
+	  - [x] Get longer on apples
+	  - [x] die on sides
+	  - [x] die on body hit
+	  - [x] implement game over function
+	  - [x] delete apples on game over
 
 
 ## Bugs Fixed
