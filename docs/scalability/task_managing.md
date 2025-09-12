@@ -6,6 +6,11 @@ kanban-plugin: board
 
 ## TODO
 
+- [ ] Add cards for each game
+
+
+## General WIP
+
 - [ ] Scale Tree
 	- [ ] Class that holds scales (upgrades)
 	- [ ] Start up pick which tree you want - initialize that tree
@@ -15,11 +20,6 @@ kanban-plugin: board
 	    - [ ] Position
 	    - [ ] Requirements
 	    - [ ] When unlocked function
-- [ ] Add cards for each game
-
-
-## General WIP
-
 
 
 ## Game WIP

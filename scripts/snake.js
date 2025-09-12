@@ -24,7 +24,7 @@ export class SnakeGame extends Window {
     this.snake_direction = [1, 0];
     this.apple_limit = 1;
     this.apples_spawned = [];
-    this.apples_id = register_apples(0, "snake.png", 200);
+    this.apples_id = register_apples(0, "snake_icon.png", 200);
     this.make_snake_segment(this.window_width / 2, this.window_height / 2);
 
     // this.pixi_app.stage.addEventListener("keydown", (event) => {
