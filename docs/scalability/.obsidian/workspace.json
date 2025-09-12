@@ -4,22 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "0d7fee77fec54293",
+        "id": "2f2e4890622754dd",
         "type": "tabs",
         "children": [
           {
-            "id": "141ef19d01b47d60",
+            "id": "a6b626dc94b0ca0e",
             "type": "leaf",
             "state": {
               "type": "kanban",
               "state": {
-                "file": "task_managing.md",
+                "file": "General.md",
                 "kanbanViewState": {
                   "kanban-plugin": "board",
                   "list-collapse": [
-                    false,
-                    false,
-                    false,
                     false,
                     false,
                     false,
@@ -28,7 +25,7 @@
                 }
               },
               "icon": "lucide-trello",
-              "title": "task_managing"
+              "title": "General"
             }
           }
         ]
@@ -88,8 +85,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "ccdede3c3efb91a7",
@@ -181,9 +177,19 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "141ef19d01b47d60",
+  "active": "a6b626dc94b0ca0e",
   "lastOpenFiles": [
+    "Knowledge.md",
+    "Scalability.md",
+    "General.md",
+    "Expansion.md",
+    "Consumption.md",
+    "Conquest.md",
+    "Growth.md",
+    "Untitled.md",
+    "G.md",
     "task_managing.md",
+    "Untitled.canvas",
     "TODO.md",
     "Desktop.md",
     "Snake.md",
