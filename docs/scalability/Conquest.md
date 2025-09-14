@@ -13,6 +13,7 @@ kanban-plugin: board
 - [ ] Forts
 - [ ] Tug of War
 - [ ] Space Strategy
+- [ ] Map Display
 
 
 ## WIP

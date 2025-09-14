@@ -11,6 +11,7 @@ kanban-plugin: board
 - [ ] Town Management
 - [ ] Logistics Management
 - [ ] Strikefleet Omega
+- [ ] Display
 
 
 ## WIP

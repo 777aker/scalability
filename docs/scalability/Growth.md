@@ -7,6 +7,7 @@ kanban-plugin: board
 ## TODO
 
 - [ ] Idle Clicker
+- [ ] Mandelbra Display
 
 
 ## WIP

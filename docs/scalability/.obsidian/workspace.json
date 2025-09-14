@@ -13,7 +13,7 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "General.md",
+                "file": "Scalability.md",
                 "kanbanViewState": {
                   "kanban-plugin": "board",
                   "list-collapse": [
@@ -25,7 +25,7 @@
                 }
               },
               "icon": "lucide-trello",
-              "title": "General"
+              "title": "Scalability"
             }
           }
         ]
@@ -177,15 +177,15 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "a6b626dc94b0ca0e",
+  "active": "e067e5ee2ff9e357",
   "lastOpenFiles": [
-    "Scalability.md",
+    "Knowledge.md",
     "Growth.md",
     "General.md",
-    "Knowledge.md",
     "Expansion.md",
     "Consumption.md",
     "Conquest.md",
+    "Scalability.md",
     "Untitled.md",
     "G.md",
     "task_managing.md",

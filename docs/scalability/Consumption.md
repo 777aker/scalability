@@ -9,6 +9,7 @@ kanban-plugin: board
 - [ ] Shark
 - [ ] Solar 2
 - [ ] Destroy a Planet Game
+- [ ] Display
 
 
 ## WIP
