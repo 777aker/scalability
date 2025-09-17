@@ -1,4 +1,6 @@
-import { applyMatrix } from "pixi.js";
+import { applyMatrix, Graphics } from "pixi.js";
+import { Window } from "./window";
+import { COLORS } from "./constants";
 
 var apples_list = [];
 var apples_limit = [];
@@ -85,6 +87,7 @@ export function get_apples() {
     (accumulator, cur_value) => accumulator + cur_value,
     0
   );
+  return total_apples;
 }
 
 /**
@@ -105,5 +108,66 @@ export function decrease_apples_limit_id(amount, id) {
   apples_limit[id] -= amount;
   if (apples_limit[id] < 0) {
     apples_limit[id] = 0;
+  }
+}
+
+export class ApplesDisplay extends Window {
+  constructor(app) {
+    super(50, 50, 250, 250, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
+
+    this.apples_display_time = 0;
+    this.apples_display_update_speed = 50;
+    this.apples_over_time = [];
+    this.plot_graphics = new Graphics();
+    this.window.addChild(this.plot_graphics);
+    this.x_plot_border = 20;
+    this.y_plot_border = 20;
+
+    this.pixi_app.ticker.add((ticker) => {
+      this.tick_window(ticker);
+    });
+  }
+
+  tick_window(ticker) {
+    this.apples_display_time += ticker.deltaTime;
+    if (this.apples_display_time < this.apples_display_update_speed) {
+      return;
+    }
+
+    this.apples_display_time = 0;
+    // add new value to food
+    this.apples_over_time.push(get_apples());
+
+    // get max apple for setting y
+    let apples_max = this.apples_over_time.reduce(
+      (a, b) => Math.max(a, b),
+      -Infinity
+    );
+    if (apples_max == 0) {
+      apples_max = 1;
+    }
+
+    this.plot_graphics.clear();
+
+    let previous_x = this.x_plot_border;
+    let previous_y = this.window_height - this.y_plot_border;
+    previous_y -=
+      (this.apples_over_time[0] / apples_max) *
+      (this.window_height - this.y_plot_border * 2);
+    // iterate over all the food values
+    for (let i = 1; i < this.apples_over_time.length; i++) {
+      this.plot_graphics.moveTo(previous_x, previous_y);
+      previous_x =
+        (i / this.apples_over_time.length) *
+        (this.window.width - this.x_plot_border * 2);
+      previous_x -= this.x_plot_border;
+      previous_y = this.window_height - this.y_plot_border;
+      previous_y -=
+        (this.apples_over_time[i] / apples_max) *
+        (this.window.height - this.y_plot_border * 2);
+
+      this.plot_graphics.lineTo(previous_x, previous_y);
+    }
+    this.plot_graphics.stroke({ width: 2, color: COLORS.carmine_pink });
   }
 }

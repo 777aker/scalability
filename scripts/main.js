@@ -1,6 +1,7 @@
 import { Application, Graphics, RenderLayer } from "pixi.js";
 import { SnakeGame } from "./snake";
 import { COLORS } from "./constants";
+import { ApplesDisplay } from "./apples";
 
 // global variable storing mouse so everyone can see where it is
 var mouse_global;
@@ -56,4 +57,5 @@ function keyup(event) {
 
   // initialize snake game
   const snake_game = new SnakeGame(app);
+  const apple_display = new ApplesDisplay(app);
 })();

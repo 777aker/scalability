@@ -56,12 +56,12 @@ kanban-plugin: board
 	- [x] get apples with id
 	- [x] get apples
 	- [ ] Display food
-	    - [ ] Display food window + class
-	    - [ ] save list of food over time every x seconds
-	    - [ ] get max food
-	    - [ ] make lines of food
-	        - [ ] x = i / len
-	        - [ ] y = food / max x height
+	    - [x] Display food window + class
+	    - [x] save list of food over time every x seconds
+	    - [x] get max food
+	    - [x] make lines of food
+	        - [x] x = i / len
+	        - [x] y = food / max x height
 	    - [ ] show icon at end of list
 - [ ] Scale Tree
 	- [ ] Class that holds scales (upgrades)
@@ -84,6 +84,10 @@ kanban-plugin: board
 ## BUGS
 
 - [ ] Snake - edges seem to be weird. Head is at -10 when it looks like it should be 0
+- [ ] display apples
+	 - [ ] x beginning is off
+	 - [ ] y max is off
+	 - [ ] snake doesn't remove it's apples when you die
 
 
 ## DONE

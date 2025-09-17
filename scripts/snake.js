@@ -17,7 +17,7 @@ export class SnakeGame extends Window {
     // snake variables
     this.snake_width = 10;
     this.snake_height = 10;
-    this.snake_speed = 10;
+    this.snake_speed = 15;
     this.apple_size = 10;
     this.snake_time = 0;
     this.snake_body = [];

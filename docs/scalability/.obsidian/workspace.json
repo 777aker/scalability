@@ -29,22 +29,6 @@
             }
           }
         ]
-      },
-      {
-        "id": "2170207502a1f23f",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "25916004bb5d65d4",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
