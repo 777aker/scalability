@@ -13,7 +13,7 @@
             "state": {
               "type": "kanban",
               "state": {
-                "file": "Scalability.md",
+                "file": "Tracking.md",
                 "kanbanViewState": {
                   "kanban-plugin": "board",
                   "list-collapse": [
@@ -25,7 +25,23 @@
                 }
               },
               "icon": "lucide-trello",
-              "title": "Scalability"
+              "title": "Tracking"
+            }
+          }
+        ]
+      },
+      {
+        "id": "2170207502a1f23f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "25916004bb5d65d4",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -177,15 +193,15 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "e067e5ee2ff9e357",
+  "active": "a6b626dc94b0ca0e",
   "lastOpenFiles": [
-    "Knowledge.md",
-    "Growth.md",
-    "General.md",
-    "Expansion.md",
-    "Consumption.md",
     "Conquest.md",
+    "Consumption.md",
+    "Tracking.md",
+    "Expansion.md",
+    "Growth.md",
     "Scalability.md",
+    "Knowledge.md",
     "Untitled.md",
     "G.md",
     "task_managing.md",
