@@ -1,5 +1,5 @@
 import { applyMatrix, Graphics } from "pixi.js";
-import { Window } from "./window";
+import { GameWindow } from "./window";
 import { COLORS } from "./constants";
 
 var apples_list = [];
@@ -111,13 +111,14 @@ export function decrease_apples_limit_id(amount, id) {
   }
 }
 
-export class ApplesDisplay extends Window {
+export class ApplesDisplay extends GameWindow {
   constructor(app) {
     super(50, 50, 250, 250, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
 
     this.apples_display_time = 0;
     this.apples_display_update_speed = 50;
-    this.apples_over_time = [];
+    this.apples_over_time = [0];
+    this.apples_time_tracker = [0];
     this.plot_graphics = new Graphics();
     this.window.addChild(this.plot_graphics);
     this.x_plot_border = 20;
@@ -136,7 +137,15 @@ export class ApplesDisplay extends Window {
 
     this.apples_display_time = 0;
     // add new value to food
-    this.apples_over_time.push(get_apples());
+    const current_apples = get_apples();
+    if (
+      current_apples != this.apples_over_time[this.apples_over_time.length - 1]
+    ) {
+      this.apples_over_time.push(current_apples);
+      this.apples_time_tracker.push(1);
+    } else {
+      this.apples_time_tracker[this.apples_time_tracker.length - 1] += 1;
+    }
 
     // get max apple for setting y
     let apples_max = this.apples_over_time.reduce(
@@ -147,6 +156,11 @@ export class ApplesDisplay extends Window {
       apples_max = 1;
     }
 
+    let total_time = this.apples_time_tracker.reduce(
+      (prev, cur) => prev + cur,
+      0
+    );
+
     this.plot_graphics.clear();
 
     let previous_x = this.x_plot_border;
@@ -155,16 +169,15 @@ export class ApplesDisplay extends Window {
       (this.apples_over_time[0] / apples_max) *
       (this.window_height - this.y_plot_border * 2);
     // iterate over all the food values
-    for (let i = 1; i < this.apples_over_time.length; i++) {
+    for (let i = 0; i < this.apples_over_time.length; i++) {
       this.plot_graphics.moveTo(previous_x, previous_y);
-      previous_x =
-        (i / this.apples_over_time.length) *
-        (this.window.width - this.x_plot_border * 2);
-      previous_x -= this.x_plot_border;
+      previous_x +=
+        (this.apples_time_tracker[i] / total_time) *
+        (this.window_width - this.x_plot_border * 2);
       previous_y = this.window_height - this.y_plot_border;
       previous_y -=
         (this.apples_over_time[i] / apples_max) *
-        (this.window.height - this.y_plot_border * 2);
+        (this.window_height - this.y_plot_border * 2);
 
       this.plot_graphics.lineTo(previous_x, previous_y);
     }

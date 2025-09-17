@@ -6,7 +6,7 @@ import { COLORS } from "./constants";
 const BAR_HEIGHT = 30;
 
 // Base class for windows
-export class Window {
+export class GameWindow {
   /**
    * Constructor for a window object
    * @param {int} x - x position on screen

@@ -1,5 +1,5 @@
 import { Application, Color, Graphics } from "pixi.js";
-import { Window } from "./window";
+import { GameWindow } from "./window";
 import { COLORS } from "./constants";
 import { get_keys_pressed } from "./main";
 import {
@@ -9,7 +9,7 @@ import {
   get_apples_id,
 } from "./apples";
 
-export class SnakeGame extends Window {
+export class SnakeGame extends GameWindow {
   // initialize snake game
   constructor(app) {
     super(200, 100, 400, 400, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
@@ -154,16 +154,16 @@ export class SnakeGame extends Window {
   // handle keys
   handle_keys() {
     const keys_pressed = get_keys_pressed();
-    if (keys_pressed.indexOf("w") !== -1) {
+    if (keys_pressed.indexOf("w") !== -1 && this.snake_direction[1] <= 0) {
       this.snake_direction = [0, -1];
     }
-    if (keys_pressed.indexOf("a") !== -1) {
+    if (keys_pressed.indexOf("a") !== -1 && this.snake_direction[0] <= 0) {
       this.snake_direction = [-1, 0];
     }
-    if (keys_pressed.indexOf("s") !== -1) {
+    if (keys_pressed.indexOf("s") !== -1 && this.snake_direction[1] >= 0) {
       this.snake_direction = [0, 1];
     }
-    if (keys_pressed.indexOf("d") !== -1) {
+    if (keys_pressed.indexOf("d") !== -1 && this.snake_direction[0] >= 0) {
       this.snake_direction = [1, 0];
     }
   }
@@ -184,7 +184,7 @@ export class SnakeGame extends Window {
     this.snake_body = [];
     // remove all apples
     const my_apples = get_apples_id(this.apples_id);
-    remove_apples_id(my_apples);
+    remove_apples_id(my_apples, this.apples_id);
     // restart the game
     this.make_snake_segment(this.window_width / 2, this.window_height / 2);
     this.make_apple();
