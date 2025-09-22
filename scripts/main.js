@@ -1,6 +1,6 @@
 import { Application, Graphics, RenderLayer } from "pixi.js";
-import { SnakeGame } from "./snake";
 import { COLORS } from "./constants";
+import { SnakeGame } from "./snake";
 import { ApplesDisplay } from "./apples";
 
 // global variable storing mouse so everyone can see where it is
@@ -18,6 +18,11 @@ export function get_keys_pressed() {
   return key_list;
 }
 
+/**
+ * Key was pressed down add to keys pressed list
+ * @param {event} event
+ * @returns
+ */
 function keydown(event) {
   if (key_list.indexOf(event.key) !== -1) {
     return;
@@ -25,11 +30,24 @@ function keydown(event) {
   key_list.push(event.key);
 }
 
+/**
+ * Key event was released remove from keys pressed list
+ * @param {event} event
+ */
 function keyup(event) {
   const index = key_list.indexOf(event.key);
   if (index !== -1) {
     key_list.splice(index, 1);
   }
+}
+
+/**
+ * sleep for ms, usage 'await sleep(ms);'
+ * @param {int} ms
+ * @returns
+ */
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 // start pixijs application
@@ -57,5 +75,6 @@ function keyup(event) {
 
   // initialize snake game
   const snake_game = new SnakeGame(app);
+  await sleep(10000);
   const apple_display = new ApplesDisplay(app);
 })();

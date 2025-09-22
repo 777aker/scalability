@@ -63,7 +63,7 @@ kanban-plugin: board
 	        - [x] x = i / len
 	        - [x] y = food / max x height
 	    - [ ] show icon at end of list
-	    - [ ] make window spawn after sleep in main so they have some time to play snake
+	    - [x] make window spawn after sleep in main so they have some time to play snake
 - [ ] Scale Tree
 	- [ ] Class that holds scales (upgrades)
 	- [ ] Start up pick which tree you want - initialize that tree

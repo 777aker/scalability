@@ -111,6 +111,7 @@ export function decrease_apples_limit_id(amount, id) {
   }
 }
 
+// Class that displays how many apples the user has
 export class ApplesDisplay extends GameWindow {
   constructor(app) {
     super(50, 50, 250, 250, COLORS.deep_koamaru, COLORS.exodus_fruit, app);
@@ -129,6 +130,11 @@ export class ApplesDisplay extends GameWindow {
     });
   }
 
+  /**
+   * Draw and update the graph for displaying how much food you have
+   * @param {ticker} ticker
+   * @returns
+   */
   tick_window(ticker) {
     this.apples_display_time += ticker.deltaTime;
     if (this.apples_display_time < this.apples_display_update_speed) {
