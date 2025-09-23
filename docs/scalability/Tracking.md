@@ -48,6 +48,11 @@ kanban-plugin: board
 
 ## WIP
 
+- [ ] Windows
+	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable)
+	  - [x] Click on window put on top of draw order
+	  - [x] Test multiple windows
+	  - [ ] add highlight or something around which window is selected
 - [ ] Apples
 	- [x] register apples function
 	- [x] add apples function with id
@@ -64,10 +69,12 @@ kanban-plugin: board
 	        - [x] y = food / max x height
 	    - [ ] show icon at end of list
 	    - [x] make window spawn after sleep in main so they have some time to play snake
+	    - [ ] if list > 100 remove first item add last so we don't get excessive
 - [ ] Scale Tree
 	- [ ] Class that holds scales (upgrades)
 	- [ ] Start up pick which tree you want - initialize that tree
 	- [ ] make it spawn some time after apples in main using a sleep
+	- [ ] move nodes when you drag mouse
 	- [ ] Icon for each tree
 	    - [ ] Consumption
 	    - [ ] Expansion
@@ -96,10 +103,6 @@ kanban-plugin: board
 	 - [x] y max is off
 	 - [x] snake doesn't remove it's apples when you die
 - [ ] Add cards for each game
-- [ ] Windows
-	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable)
-	  - [x] Click on window put on top of draw order
-	  - [x] Test multiple windows
 - [ ] Desktop
 	  - [ ] ~~Add open-able apps?~~ (Can't close them going to be forced open. I live for chaos.)
 - [ ] Constants scripts
