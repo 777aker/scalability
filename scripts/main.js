@@ -1,6 +1,6 @@
+import { GameWindow } from "./window"; // unused but needed for imports to see GameWindow class
 import { Application, Graphics, RenderLayer } from "pixi.js";
 import { COLORS } from "./constants";
-import { GameWindow } from "./window"; // unused but needed for imports to see GameWindow class
 import { SnakeGame } from "./snake";
 import { ApplesDisplay } from "./apples";
 
