@@ -44,6 +44,8 @@ kanban-plugin: board
 - [ ] Map Display
 	Conquest Tree
 - [ ] Storage = food drop minigame for keeping food on death
+- [ ] Penguin Learn to Fly
+- [ ] think about cryptography / shenanigans that open knowledge tree
 
 
 ## WIP

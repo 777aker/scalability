@@ -1,0 +1,1 @@
+Mine in space and collect resources. No fighting though.

@@ -1,0 +1,1 @@
+Basic idle clicker game

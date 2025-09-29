@@ -1,0 +1,2 @@
+Manage conquered territories
+[[Galaga]]

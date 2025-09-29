@@ -4,28 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "2f2e4890622754dd",
+        "id": "4093968ea3f57139",
         "type": "tabs",
         "children": [
           {
-            "id": "a6b626dc94b0ca0e",
+            "id": "80a6137f4eb88650",
             "type": "leaf",
             "state": {
-              "type": "kanban",
-              "state": {
-                "file": "Tracking.md",
-                "kanbanViewState": {
-                  "kanban-plugin": "board",
-                  "list-collapse": [
-                    false,
-                    false,
-                    false,
-                    false
-                  ]
-                }
-              },
-              "icon": "lucide-trello",
-              "title": "Tracking"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -177,25 +166,41 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "a6b626dc94b0ca0e",
+  "active": "80a6137f4eb88650",
   "lastOpenFiles": [
+    "Tracking.md",
+    "Knowledge/Chess.md",
+    "Conquest/Space Strategy.md",
+    "Conquest/Galaga.md",
+    "Conquest/Strategy Game.md",
+    "Conquest/Tug of War.md",
+    "Conquest/Forts.md",
+    "Conquest/Bullet Heaven.md",
+    "Conquest/Map Display.md",
+    "Expansion/Crafting.md",
+    "Expansion/Terraria.md",
+    "Expansion/Logistics Management.md",
+    "Expansion/Town Management.md",
+    "Growth/Idle Clicker.md",
+    "Growth/Mandelbrot Display.md",
+    "Consumption/Solar 2.md",
+    "Consumption/Destroy Planet.md",
+    "Consumption/Shark.md",
+    "Expansion/Strikefleet Omega.md",
+    "Scalability/Food Drop Minigame.md",
+    "Penguin Learn to Fly.md",
+    "Paper Planet.md",
+    "Scalability/AStar.md",
+    "Scalability",
+    "Knowledge",
+    "Conquest",
+    "Consumption",
+    "Expansion",
+    "Growth",
     "Conquest.md",
     "Consumption.md",
-    "Tracking.md",
     "Expansion.md",
-    "Growth.md",
-    "Scalability.md",
-    "Knowledge.md",
-    "Untitled.md",
-    "G.md",
-    "task_managing.md",
     "Untitled.canvas",
-    "TODO.md",
-    "Desktop.md",
-    "Snake.md",
-    "Windows.md",
-    "main.css.md",
-    "main.css",
-    "Welcome.md"
+    "main.css"
   ]
 }
