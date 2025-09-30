@@ -11,10 +11,21 @@
             "id": "80a6137f4eb88650",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "kanban",
+              "state": {
+                "file": "Tracking.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "icon": "lucide-trello",
+              "title": "Tracking"
             }
           }
         ]
@@ -168,6 +179,7 @@
   },
   "active": "80a6137f4eb88650",
   "lastOpenFiles": [
+    "Penguin Learn to Fly.md",
     "Tracking.md",
     "Knowledge/Chess.md",
     "Conquest/Space Strategy.md",
@@ -188,7 +200,6 @@
     "Consumption/Shark.md",
     "Expansion/Strikefleet Omega.md",
     "Scalability/Food Drop Minigame.md",
-    "Penguin Learn to Fly.md",
     "Paper Planet.md",
     "Scalability/AStar.md",
     "Scalability",

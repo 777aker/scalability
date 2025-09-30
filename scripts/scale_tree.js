@@ -5,9 +5,13 @@ import { GameWindow } from "./window";
 /**
  * Class for the nodes in the growth path tree
  */
-class TreeNode {
+export class TreeNode {
   constructor(app, x, y, cost, clicked_function) {
     this.pixi_app = app;
+    this.cost = cost;
+    this.clicked_function = clicked_function;
+    // spawn node at 0, 0
+    //
   }
 
   /**
@@ -40,34 +44,5 @@ export class ScaleTree extends GameWindow {
     // the knowledge tree and final tree are greyed out by default
     // final tree have to get all other trees
     // knowledge tree you have to do cryptography about it to unlock
-  }
-  // Each tree holds bought, available, draw, unseen
-  // bought the player has gotten
-  // available the player can buy if they have enough apples
-  // draw is just nodes that they can get in the future to draw
-  // unseen is nodes the player can't see yet
-
-  init_consumption() {
-    // init bought, available, draw, unseen
-  }
-
-  init_expansion() {
-    // init bought, available, draw, unseen
-  }
-
-  init_knowledge() {
-    // init bought, available, draw, unseen
-  }
-
-  init_growth() {
-    // init bought, available, draw, unseen
-  }
-
-  init_conquest() {
-    // init bought, available, draw, unseen
-  }
-
-  init_final() {
-    // init bought, available, draw, unseen
   }
 }
