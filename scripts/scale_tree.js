@@ -11,7 +11,8 @@ export class TreeNode {
     this.cost = cost;
     this.clicked_function = clicked_function;
     // spawn node at 0, 0
-    //
+    // move it to x, y
+    // add button when clicked that checks cost, calls buy, then calls clickedd
   }
 
   /**
@@ -20,9 +21,9 @@ export class TreeNode {
   hovered() {}
 
   /**
-   * update this nodes stuff
+   * change a nodes graphic to look like a bought node
    */
-  draw() {}
+  buy() {}
 
   /**
    * move the node by x, y, stop drawing if out of bounds
