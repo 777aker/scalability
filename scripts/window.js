@@ -1,7 +1,8 @@
-import { Application, ColorMatrixFilter, Graphics } from "pixi.js";
-import { Button } from "@pixi/ui";
-import { get_mouse } from "./main";
-import { COLORS } from "./constants";
+import {Button} from '@pixi/ui';
+import {Application, ColorMatrixFilter, Graphics} from 'pixi.js';
+
+import {COLORS} from './constants';
+import {get_mouse} from './event_tracking';
 
 const BAR_HEIGHT = 30;
 
@@ -29,28 +30,27 @@ export class GameWindow {
 
     // create the window rect
     this.window = new Graphics()
-      .rect(0, 0, this.window_width, this.window_height)
-      .fill(bg_color)
-      .stroke(st_color)
-      .setStrokeStyle(5);
-    this.window.eventMode = "static";
-    this.window.on("pointerdown", () => {
+                      .rect(0, 0, this.window_width, this.window_height)
+                      .fill(bg_color)
+                      .stroke(st_color)
+                      .setStrokeStyle(5);
+    this.window.eventMode = 'static';
+    this.window.on('pointerdown', () => {
       this.clicked_window(this);
     });
-    this.window.on("pointerleave", () => {
+    this.window.on('pointerleave', () => {
       this.left_window(this);
     });
     this.pixi_app.stage.addChild(this.window);
 
     // button that allows for dragging the window
     // maybe should just be a graphics object with mouse interaction?
-    this.window_bar_btn = new Button(
-      new Graphics()
-        .rect(0, -BAR_HEIGHT, this.window_width, BAR_HEIGHT)
-        .fill(bg_color)
-        .stroke(st_color)
-        .setStrokeStyle(5)
-    );
+    this.window_bar_btn =
+        new Button(new Graphics()
+                       .rect(0, -BAR_HEIGHT, this.window_width, BAR_HEIGHT)
+                       .fill(bg_color)
+                       .stroke(st_color)
+                       .setStrokeStyle(5));
     this.window.addChild(this.window_bar_btn.view);
     // connect dragging functions
     this.window_bar_btn.onDown.connect(() => this.dragging_window(true));
@@ -85,14 +85,13 @@ export class GameWindow {
     });
   }
 
-  // function for moving the window to x, y, centered around draggable window bar
+  // function for moving the window to x, y, centered around draggable window
+  // bar
   move_window(x, y) {
     this.window_x = x;
     this.window_y = y;
     this.window.position.set(
-      this.window_x - this.window_width / 2,
-      this.window_y + BAR_HEIGHT / 2
-    );
+        this.window_x - this.window_width / 2, this.window_y + BAR_HEIGHT / 2);
   }
 
   // function for what to do when we've started or stopped dragging a window
@@ -139,6 +138,6 @@ export class GameWindow {
 
   // What to do each game tick
   tick_window(ticker) {
-    console.warn("Tick window not implemented by inherited class");
+    console.warn('Tick window not implemented by inherited class');
   }
 }

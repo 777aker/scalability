@@ -1,16 +1,11 @@
-import { GameWindow } from "./window"; // unused but needed for imports to see GameWindow class
-import { Application, Graphics, RenderLayer } from "pixi.js";
-import { COLORS } from "./constants";
-import { SnakeGame } from "./snake";
-import { ApplesDisplay } from "./apples";
+import {Application, Graphics, RenderLayer} from 'pixi.js';
 
-// global variable storing mouse so everyone can see where it is
-var mouse_global;
-
-// global getter for mouse position
-export function get_mouse() {
-  return mouse_global;
-}
+import {ApplesDisplay} from './apples';
+import {COLORS} from './constants';
+import {update_mouse} from './event_tracking';
+import {ScaleTree} from './scale_tree';
+import {SnakeGame} from './snake';
+import {GameWindow} from './window';  // unused but needed for imports to see GameWindow class
 
 var key_list = [];
 
@@ -62,20 +57,22 @@ function sleep(ms) {
   });
 
   // set app properties
-  app.canvas.style.position = "absolute";
+  app.canvas.style.position = 'absolute';
   document.body.appendChild(app.canvas);
-  app.stage.eventMode = "static";
+  app.stage.eventMode = 'static';
   // app.ticker.maxFPS = 30;
   // app.ticker.minFPS = 30;
-  app.stage.addEventListener("pointermove", (e) => {
-    mouse_global = e.global;
+  app.stage.addEventListener('pointermove', (e) => {
+    update_mouse(e.global);
   });
-  window.addEventListener("keydown", keydown);
-  window.addEventListener("keyup", keyup);
+  window.addEventListener('keydown', keydown);
+  window.addEventListener('keyup', keyup);
   app.stage.sortableChildren = true;
 
   // initialize snake game
   const snake_game = new SnakeGame(app);
   await sleep(10000);
   const apple_display = new ApplesDisplay(app);
+  await sleep(5000);
+  const scale_tree = new ScaleTree(app);
 })();
