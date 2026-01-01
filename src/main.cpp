@@ -14,10 +14,12 @@ https://creativecommons.org/publicdomain/zero/1.0/
 
 int main() {
   // Tell the window to use vsync and work on high DPI displays
-  SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI);
+  SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI |
+                 FLAG_WINDOW_TRANSPARENT | FLAG_FULLSCREEN_MODE);
 
   // Create the window and OpenGL context
   InitWindow(1280, 800, "Hello Raylib");
+  SetWindowState(FLAG_WINDOW_UNDECORATED);
 
   // Utility function from resource_dir.h to find the resources folder and set
   // it as the current working directory so we can load from it
@@ -26,14 +28,19 @@ int main() {
   // Load a texture from the resources directory
   Texture wabbit = LoadTexture("snake_icon.png");
 
+  bool exit_window = false;
+
   // game loop
   while (!WindowShouldClose()) // run the loop until the user presses ESCAPE or
                                // presses the Close button on the window
   {
+    if (IsKeyPressed(KEY_ESCAPE))
+      break;
+
     BeginDrawing();
 
     // Setup the back buffer for drawing (clear color and depth buffers)
-    ClearBackground(BLACK);
+    ClearBackground(BLANK);
 
     // draw some text using the default font
     DrawText("Hello Raylib", 200, 200, 20, WHITE);
