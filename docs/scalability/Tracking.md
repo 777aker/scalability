@@ -77,7 +77,6 @@ kanban-plugin: board
 	  - [ ] die on body hit
 	  - [ ] implement game over function
 	  - [ ] delete apples on game over
-- [ ] Constant Colors
 - [ ] Windows
 	  - [ ] Close button delete graphics (memory leak if you don't)  (windows will not  be closable)
 	  - [ ] Click on window put on top of draw order
@@ -108,6 +107,7 @@ kanban-plugin: board
 
 ## DONE
 
+- [ ] Constant Colors
 
 
 

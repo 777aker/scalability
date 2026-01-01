@@ -12,6 +12,12 @@ https://creativecommons.org/publicdomain/zero/1.0/
 
 #include "resource_dir.h" // utility header for SearchAndSetResourceDir
 
+#include "snake/snake.hpp"
+#include "window/window.hpp"
+
+std::vector<Window *> windows = {};
+Window *top_mouse_over = nullptr;
+
 int main() {
   // Tell the window to use vsync and work on high DPI displays
   SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI |
@@ -25,6 +31,11 @@ int main() {
   // it as the current working directory so we can load from it
   SearchAndSetResourceDir("resources");
 
+  Snake snake(200, 200);
+  windows.push_back((Window *)&snake);
+  Snake test(300, 210);
+  windows.push_back((Window *)&test);
+
   // game loop
   while (!WindowShouldClose()) // run the loop until the user presses ESCAPE or
                                // presses the Close button on the window
@@ -35,6 +46,23 @@ int main() {
     BeginDrawing();
     // Setup the back buffer for drawing (clear color and depth buffers)
     ClearBackground(BLANK);
+
+    for (int i = windows.size() - 1; i >= 0; i--) {
+      if (CheckCollisionPointRec(GetMousePosition(), windows[i]->window_rect)) {
+        top_mouse_over = windows[i];
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
+          Window *temp = windows[i];
+          windows.erase(windows.begin() + i);
+          windows.push_back(std::move(temp));
+        }
+        break;
+      }
+    }
+
+    for (Window *window : windows) {
+      window->draw_window();
+      window->draw();
+    }
 
     // end the frame and get ready for the next one  (display frame, poll input,
     // etc...)
