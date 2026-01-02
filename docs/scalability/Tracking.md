@@ -77,14 +77,14 @@ kanban-plugin: board
 	  - [x] die on body hit
 	  - [x] can't go opposite direction
 	  - [x] implement game over function
-	  - [ ] delete apples on game over
+	  - [x] delete apples on game over
 - [ ] Apples
-	- [ ] register apples function
-	- [ ] add apples function with id
-	- [ ] remove apples function
-	- [ ] remove apples function with id
-	- [ ] get apples with id
-	- [ ] get apples
+	- [x] register apples function
+	- [x] add apples function with id
+	- [x] remove apples function
+	- [x] remove apples function with id
+	- [x] get apples with id
+	- [x] get apples
 	- [ ] Display food
 	    - [ ] Display food window + class
 	    - [ ] save list of food over time every x seconds

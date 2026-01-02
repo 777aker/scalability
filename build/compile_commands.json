@@ -117,11 +117,36 @@
       "-std=c++17",
       "-c",
       "-o",
-      "obj/x64/Debug/scalability/apples.o",
-      "../../src/snake/apples.cpp"
+      "obj/x64/Debug/scalability/snake.o",
+      "../../src/snake/snake.cpp"
     ],
     "directory": "/home/kelley/Desktop/scalability/build/build_files",
-    "file": "/home/kelley/Desktop/scalability/src/snake/apples.cpp",
+    "file": "/home/kelley/Desktop/scalability/src/snake/snake.cpp",
+    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/snake.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_GLFW_X11",
+      "-I../../src",
+      "-I../../include",
+      "-I../external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "obj/x64/Debug/scalability/apples.o",
+      "../../src/window/apples.cpp"
+    ],
+    "directory": "/home/kelley/Desktop/scalability/build/build_files",
+    "file": "/home/kelley/Desktop/scalability/src/window/apples.cpp",
     "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/apples.o"
   },
   {
@@ -143,36 +168,11 @@
       "-c",
       "-o",
       "obj/x64/Debug/scalability/scale_tree.o",
-      "../../src/snake/scale_tree.cpp"
+      "../../src/window/scale_tree.cpp"
     ],
     "directory": "/home/kelley/Desktop/scalability/build/build_files",
-    "file": "/home/kelley/Desktop/scalability/src/snake/scale_tree.cpp",
+    "file": "/home/kelley/Desktop/scalability/src/window/scale_tree.cpp",
     "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/scale_tree.o"
-  },
-  {
-    "arguments": [
-      "g++",
-      "-MD",
-      "-MP",
-      "-DDEBUG",
-      "-DPLATFORM_DESKTOP",
-      "-DGRAPHICS_API_OPENGL_33",
-      "-D_GLFW_X11",
-      "-I../../src",
-      "-I../../include",
-      "-I../external/raylib-master/src",
-      "-m64",
-      "-Wshadow",
-      "-g",
-      "-std=c++17",
-      "-c",
-      "-o",
-      "obj/x64/Debug/scalability/snake.o",
-      "../../src/snake/snake.cpp"
-    ],
-    "directory": "/home/kelley/Desktop/scalability/build/build_files",
-    "file": "/home/kelley/Desktop/scalability/src/snake/snake.cpp",
-    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/snake.o"
   },
   {
     "arguments": [

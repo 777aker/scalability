@@ -22,6 +22,7 @@ Window::Window(std::string window_title, float width, float height, float xpos,
                float ypos, Color window_background)
     : title(window_title), background(window_background) {
   window_rect = {xpos, ypos, width, height};
+  apples_id = applesManager.registerApplesID();
 }
 
 void Window::draw_window() {

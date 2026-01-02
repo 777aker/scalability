@@ -17,6 +17,7 @@ https://creativecommons.org/publicdomain/zero/1.0/
 
 std::vector<Window *> windows = {};
 Window *top_mouse_over = nullptr;
+ApplesManager applesManager;
 
 int main() {
   // Tell the window to use vsync and work on high DPI displays
@@ -30,10 +31,14 @@ int main() {
   // it as the current working directory so we can load from it
   SearchAndSetResourceDir("resources");
 
-  Snake snake(200, 200);
-  windows.push_back((Window *)&snake);
-  Snake test(300, 210);
-  windows.push_back((Window *)&test);
+  applesManager = ApplesManager();
+
+  ApplesDisplay applesDisplay;
+  windows.push_back((Window *)&applesDisplay);
+  Snake snake1(200, 200);
+  windows.push_back((Window *)&snake1);
+  Snake snake2(150, 400);
+  windows.push_back((Window *)&snake2);
 
   // game loop
   while (!WindowShouldClose()) // run the loop until the user presses ESCAPE or

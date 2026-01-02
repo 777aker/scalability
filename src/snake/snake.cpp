@@ -10,6 +10,7 @@ Snake::Snake(int txpos, int typos)
 void Snake::restart() {
   snake_body.clear();
   apples.clear();
+  applesManager.RemoveAllApplesID(apples_id);
 
   time_passed = 0;
   snake_length = 1;
@@ -58,9 +59,10 @@ void Snake::draw() {
 
   // apple time
   if (make_new_apples) {
-    Rectangle apple = {std::rand() % ((int)(window_rect.width - snake_size)),
-                       std::rand() % ((int)(window_rect.height - snake_size)),
-                       snake_size, snake_size};
+    Rectangle apple = {
+        (float)(std::rand() % (int)(window_rect.width - snake_size)),
+        (float)(std::rand() % (int)(window_rect.height - snake_size)),
+        snake_size, snake_size};
     apples.push_back(apple);
     make_new_apples -= 1;
   }
@@ -70,6 +72,7 @@ void Snake::draw() {
       apple.y = -100;
       make_new_apples += 1;
       snake_length += 1;
+      applesManager.AddApplesID(apples_id, 1);
     } else {
       Rectangle pos = apple;
       pos.x += window_rect.x;
