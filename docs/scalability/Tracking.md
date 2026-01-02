@@ -73,16 +73,11 @@ kanban-plugin: board
 	  - [x] Move-able snake
 	  - [x] Random Apples
 	  - [x] Get longer on apples
-	  - [ ] die on sides
-	  - [ ] die on body hit
-	  - [ ] can't go opposite direction
-	  - [ ] implement game over function
+	  - [x] die on sides
+	  - [x] die on body hit
+	  - [x] can't go opposite direction
+	  - [x] implement game over function
 	  - [ ] delete apples on game over
-- [ ] Windows
-	  - [ ] Close button delete graphics (memory leak if you don't)  (windows will not  be closable)
-	  - [x] Click on window put on top of draw order
-	  - [x] Test multiple windows
-	  - [ ] add highlight or something around which window is selected
 - [ ] Apples
 	- [ ] register apples function
 	- [ ] add apples function with id
@@ -108,6 +103,11 @@ kanban-plugin: board
 
 ## DONE
 
+- [ ] Windows
+	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable until I change my mind)
+	  - [x] Click on window put on top of draw order
+	  - [x] Test multiple windows
+	  - [x] add highlight or something around which window is selected
 - [ ] Constant Colors
 
 

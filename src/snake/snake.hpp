@@ -9,6 +9,7 @@ public:
   Snake(int txpos, int typos);
   void draw();
   int make_new_apples = 5;
+  void restart();
 
 private:
   std::vector<Rectangle> snake_body = {};

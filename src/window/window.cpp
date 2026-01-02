@@ -43,4 +43,9 @@ void Window::draw_window() {
     }
     DrawRectangleRec(title_bar, background + highlight);
   }
+
+  if (windows[windows.size() - 1] == this) {
+    DrawRectangleLines(window_rect.x, window_rect.y, window_rect.width,
+                       window_rect.height, turquoise);
+  }
 }

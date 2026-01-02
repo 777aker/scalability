@@ -4,9 +4,20 @@
 
 Snake::Snake(int txpos, int typos)
     : Window("Snake", 400, 400, txpos, typos, midnight_blue) {
-  Rectangle head = {window_rect.width / 2, window_rect.height / 2, 20, 20};
-  snake_body.push_back(head);
+  restart();
 };
+
+void Snake::restart() {
+  snake_body.clear();
+  apples.clear();
+
+  time_passed = 0;
+  snake_length = 1;
+  Rectangle head = {window_rect.width / 2, window_rect.height / 2, snake_size,
+                    snake_size};
+  snake_body.push_back(head);
+  make_new_apples = 5;
+}
 
 void Snake::draw() {
   time_passed += GetFrameTime();
@@ -19,7 +30,22 @@ void Snake::draw() {
     if (snake_body.size() >= snake_length) {
       snake_body.erase(snake_body.begin());
     }
-    snake_body.push_back(head);
+
+    bool restarted = false;
+    for (Rectangle &body : snake_body) {
+      if (CheckCollisionRecs(body, head)) {
+        restart();
+        restarted = true;
+      }
+    }
+    if (head.x < 0 || head.x >= window_rect.width || head.y < 0 ||
+        head.y >= window_rect.height) {
+      restart();
+      restarted = true;
+    }
+
+    if (!restarted)
+      snake_body.push_back(head);
   }
 
   // body
@@ -32,8 +58,9 @@ void Snake::draw() {
 
   // apple time
   if (make_new_apples) {
-    Rectangle apple = {std::rand() % (int)window_rect.width,
-                       std::rand() % (int)window_rect.height, 20, 20};
+    Rectangle apple = {std::rand() % ((int)(window_rect.width - snake_size)),
+                       std::rand() % ((int)(window_rect.height - snake_size)),
+                       snake_size, snake_size};
     apples.push_back(apple);
     make_new_apples -= 1;
   }
