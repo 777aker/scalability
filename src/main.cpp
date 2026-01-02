@@ -21,11 +21,10 @@ Window *top_mouse_over = nullptr;
 int main() {
   // Tell the window to use vsync and work on high DPI displays
   SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI |
-                 FLAG_WINDOW_TRANSPARENT | FLAG_FULLSCREEN_MODE);
+                 FLAG_WINDOW_TRANSPARENT | FLAG_WINDOW_RESIZABLE);
 
   // Create the window and OpenGL context
-  InitWindow(1280, 800, "Hello Raylib");
-  SetWindowState(FLAG_WINDOW_UNDECORATED);
+  InitWindow(1280, 800, "Scalability");
 
   // Utility function from resource_dir.h to find the resources folder and set
   // it as the current working directory so we can load from it
@@ -42,11 +41,15 @@ int main() {
   {
     if (IsKeyPressed(KEY_ESCAPE))
       break;
+    if (IsKeyPressed(KEY_F11))
+      ToggleFullscreen();
 
     BeginDrawing();
     // Setup the back buffer for drawing (clear color and depth buffers)
     ClearBackground(BLANK);
 
+    // get the top level window, and if the window was clicked on move it to top
+    // of pecking order
     for (int i = windows.size() - 1; i >= 0; i--) {
       if (CheckCollisionPointRec(GetMousePosition(), windows[i]->window_rect)) {
         top_mouse_over = windows[i];
@@ -59,6 +62,7 @@ int main() {
       }
     }
 
+    // call all the windows draw functions
     for (Window *window : windows) {
       window->draw_window();
       window->draw();

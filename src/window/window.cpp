@@ -42,7 +42,5 @@ void Window::draw_window() {
       dragging = true;
     }
     DrawRectangleRec(title_bar, background + highlight);
-  } else {
-    DrawRectangleRec(title_bar, background - highlight);
   }
 }
