@@ -51,13 +51,13 @@ class ApplesManager {
 public:
   ApplesManager();
   int registerApplesID();
-  void AddApplesID(int id, int amount);
-  void RemoveApplesID(int id, int amount);
-  void RemoveApples(int amount);
-  void RemoveAllApplesID(int id);
-  void RemoveAllApples();
-  int GetApplesID(int id);
-  int GetApples();
+  void addApplesID(int id, int amount);
+  void removeApplesID(int id, int amount);
+  void removeApples(int amount);
+  void removeAllApplesID(int id);
+  void removeAllApples();
+  int getApplesID(int id);
+  int getApples();
 
 private:
   std::vector<int> apples = {};
@@ -67,6 +67,13 @@ class ApplesDisplay : public Window {
 public:
   ApplesDisplay();
   void draw();
+
+private:
+  std::vector<int> apples_record = {};
+  int apples_position = 0;
+  int record_time = 1;
+  int time_since_record = 0;
+  int max_apples = 0;
 };
 
 // global variables for managing stuff

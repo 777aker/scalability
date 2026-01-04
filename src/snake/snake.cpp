@@ -10,7 +10,7 @@ Snake::Snake(int txpos, int typos)
 void Snake::restart() {
   snake_body.clear();
   apples.clear();
-  applesManager.RemoveAllApplesID(apples_id);
+  applesManager.removeAllApplesID(apples_id);
 
   time_passed = 0;
   snake_length = 1;
@@ -72,7 +72,7 @@ void Snake::draw() {
       apple.y = -100;
       make_new_apples += 1;
       snake_length += 1;
-      applesManager.AddApplesID(apples_id, 1);
+      applesManager.addApplesID(apples_id, 1);
     } else {
       Rectangle pos = apple;
       pos.x += window_rect.x;

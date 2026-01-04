@@ -7,15 +7,15 @@ int ApplesManager::registerApplesID() {
   return apples.size() - 1;
 }
 
-void ApplesManager::AddApplesID(int id, int amount) { apples[id] += amount; }
+void ApplesManager::addApplesID(int id, int amount) { apples[id] += amount; }
 
-void ApplesManager::RemoveApplesID(int id, int amount) {
+void ApplesManager::removeApplesID(int id, int amount) {
   apples[id] -= amount;
   if (apples[id] < 0)
     apples[id] = 0;
 }
 
-void ApplesManager::RemoveApples(int amount) {
+void ApplesManager::removeApples(int amount) {
   int apples_to_remove = amount;
   int apples_zeroed = 0;
   while (apples_to_remove > 0 && apples_zeroed != apples.size()) {
@@ -33,17 +33,17 @@ void ApplesManager::RemoveApples(int amount) {
   }
 }
 
-void ApplesManager::RemoveAllApplesID(int id) { apples[id] = 0; }
+void ApplesManager::removeAllApplesID(int id) { apples[id] = 0; }
 
-void ApplesManager::RemoveAllApples() {
+void ApplesManager::removeAllApples() {
   for (int &app : apples) {
     app = 0;
   }
 }
 
-int ApplesManager::GetApplesID(int id) { return apples[id]; }
+int ApplesManager::getApplesID(int id) { return apples[id]; }
 
-int ApplesManager::GetApples() {
+int ApplesManager::getApples() {
   int total = 0;
   for (int app : apples) {
     total += app;
@@ -54,4 +54,29 @@ int ApplesManager::GetApples() {
 ApplesDisplay::ApplesDisplay()
     : Window("Apples", 400, 400, 100, 100, midnight_blue) {}
 
-void ApplesDisplay::draw() {}
+void ApplesDisplay::draw() {
+  time_since_record += GetFrameTime();
+  if (time_since_record >= record_time) {
+    time_since_record = 0;
+    if (apples_record.size() >= 100) {
+      apples_record.erase(apples_record.begin());
+      apples_record.push_back(applesManager.getApples());
+    } else {
+      apples_record.push_back(applesManager.getApples());
+    }
+    if (applesManager.getApples() > max_apples) {
+      max_apples = applesManager.getApples();
+    }
+  }
+  float y_size = (window_rect.height - 20) / max_apples;
+  float x_size = (window_rect.width - 20) / apples_record.size();
+  for (unsigned long int i = 0; i < apples_record.size() - 2; i++) {
+    // DrawLine((10 + i * x_size) + window_rect.x,
+    //          ((apples_record[i] / max_apples) * y_size) + window_rect.y,
+    //          (10 + (i)*x_size) + window_rect.x,
+    //          ((apples_record[i] / max_apples) * y_size) + window_rect.y,
+    //          nephritis);
+    printf("%d < %d\n", i, apples_record.size() - 2);
+    printf("%d\n", i < apples_record.size() - 2);
+  }
+}
