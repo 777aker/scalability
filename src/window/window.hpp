@@ -73,7 +73,7 @@ private:
   int apples_position = 0;
   float record_time = 1;
   float time_since_record = 0;
-  float max_apples = 0;
+  float max_apples = 1;
 };
 
 // global variables for managing stuff

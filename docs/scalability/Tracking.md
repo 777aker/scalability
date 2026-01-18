@@ -103,6 +103,10 @@ kanban-plugin: board
 	  - [x] can't go opposite direction
 	  - [x] implement game over function
 	  - [x] delete apples on game over
+- [ ] 1 Snake game to start
+- [ ] Windows don't start on top of each other
+- [ ] flip green and red
+- [ ] green graph up red graph down
 - [ ] Windows
 	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable until I change my mind)
 	  - [x] Click on window put on top of draw order

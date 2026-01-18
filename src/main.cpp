@@ -22,7 +22,8 @@ ApplesManager applesManager;
 int main() {
   // Tell the window to use vsync and work on high DPI displays
   SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI |
-                 FLAG_WINDOW_TRANSPARENT | FLAG_WINDOW_RESIZABLE);
+                 FLAG_WINDOW_TRANSPARENT | FLAG_WINDOW_RESIZABLE |
+                 FLAG_FULLSCREEN_MODE);
 
   // Create the window and OpenGL context
   InitWindow(1280, 800, "Scalability");
@@ -35,10 +36,8 @@ int main() {
 
   ApplesDisplay applesDisplay;
   windows.push_back((Window *)&applesDisplay);
-  Snake snake1(200, 200);
+  Snake snake1(600, 400);
   windows.push_back((Window *)&snake1);
-  Snake snake2(150, 400);
-  windows.push_back((Window *)&snake2);
 
   // game loop
   while (!WindowShouldClose()) // run the loop until the user presses ESCAPE or

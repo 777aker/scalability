@@ -54,7 +54,7 @@ void Snake::draw() {
     Rectangle pos = body;
     pos.x += window_rect.x;
     pos.y += window_rect.y;
-    DrawRectangleRec(pos, pomegranate);
+    DrawRectangleRec(pos, emerald);
   }
 
   // apple time
@@ -77,7 +77,7 @@ void Snake::draw() {
       Rectangle pos = apple;
       pos.x += window_rect.x;
       pos.y += window_rect.y;
-      DrawRectangleRec(pos, emerald);
+      DrawRectangleRec(pos, pomegranate);
     }
   }
   apples.erase(std::remove_if(apples.begin(), apples.end(),

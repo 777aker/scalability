@@ -71,10 +71,15 @@ void ApplesDisplay::draw() {
     }
   }
 
-  float y_size = (window_rect.height - 20) / max_apples;
   float x_size = (window_rect.width - 20) / apples_record.size();
   std::cout << applesManager.getApples() << std::endl;
+  Color line_color = emerald;
   for (int i = 0; i < (int)apples_record.size() - 1; i++) {
+    if (apples_record[i] < apples_record[i + 1]) {
+      line_color = emerald;
+    } else if (apples_record[i] > apples_record[i + 1]) {
+      line_color = pomegranate;
+    }
     DrawLine(10 + i * x_size + window_rect.x,
              window_rect.y - 10 + window_rect.height -
                  (apples_record[i] / max_apples) * (window_rect.height - 20),
@@ -82,6 +87,6 @@ void ApplesDisplay::draw() {
              window_rect.y - 10 + window_rect.height -
                  (apples_record[i + 1] / max_apples) *
                      (window_rect.height - 20),
-             nephritis);
+             line_color);
   }
 }
