@@ -68,7 +68,32 @@ kanban-plugin: board
 
 ## WIP
 
-- [ ] display apples
+- [ ] Apples
+	- [x] register apples function
+	- [x] add apples function with id
+	- [x] remove apples function
+	- [x] remove apples function with id
+	- [x] get apples with id
+	- [x] get apples
+	- [ ] Display food
+	    - [x] Display food window + class
+	    - [x] save list of food over time every x seconds
+	    - [x] get max food
+	    - [x] make lines of food
+	        - [x] x = i / len
+	        - [x] y = food / max x height
+	    - [ ] show icon at end of list
+	    - [ ] make window spawn after sleep in main so they have some time to play snake
+	    - [x] if list > 100 remove first item add last so we don't get excessive
+
+
+## BUGS
+
+- [ ] Fix Snake apples not on grid and can spawn in body
+
+
+## DONE
+
 - [ ] Snake
 	  - [x] Move-able snake
 	  - [x] Random Apples
@@ -78,31 +103,6 @@ kanban-plugin: board
 	  - [x] can't go opposite direction
 	  - [x] implement game over function
 	  - [x] delete apples on game over
-- [ ] Apples
-	- [x] register apples function
-	- [x] add apples function with id
-	- [x] remove apples function
-	- [x] remove apples function with id
-	- [x] get apples with id
-	- [x] get apples
-	- [ ] Display food
-	    - [ ] Display food window + class
-	    - [ ] save list of food over time every x seconds
-	    - [ ] get max food
-	    - [ ] make lines of food
-	        - [ ] x = i / len
-	        - [ ] y = food / max x height
-	    - [ ] show icon at end of list
-	    - [ ] make window spawn after sleep in main so they have some time to play snake
-	    - [ ] if list > 100 remove first item add last so we don't get excessive
-
-
-## BUGS
-
-
-
-## DONE
-
 - [ ] Windows
 	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable until I change my mind)
 	  - [x] Click on window put on top of draw order

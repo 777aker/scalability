@@ -69,11 +69,11 @@ public:
   void draw();
 
 private:
-  std::vector<int> apples_record = {};
+  std::vector<float> apples_record = {};
   int apples_position = 0;
-  int record_time = 1;
-  int time_since_record = 0;
-  int max_apples = 0;
+  float record_time = 1;
+  float time_since_record = 0;
+  float max_apples = 0;
 };
 
 // global variables for managing stuff

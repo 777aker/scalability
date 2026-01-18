@@ -1,5 +1,7 @@
 #include "window.hpp"
 
+#include <iostream>
+
 ApplesManager::ApplesManager() {}
 
 int ApplesManager::registerApplesID() {
@@ -68,15 +70,18 @@ void ApplesDisplay::draw() {
       max_apples = applesManager.getApples();
     }
   }
+
   float y_size = (window_rect.height - 20) / max_apples;
   float x_size = (window_rect.width - 20) / apples_record.size();
-  for (unsigned long int i = 0; i < apples_record.size() - 2; i++) {
-    // DrawLine((10 + i * x_size) + window_rect.x,
-    //          ((apples_record[i] / max_apples) * y_size) + window_rect.y,
-    //          (10 + (i)*x_size) + window_rect.x,
-    //          ((apples_record[i] / max_apples) * y_size) + window_rect.y,
-    //          nephritis);
-    printf("%d < %d\n", i, apples_record.size() - 2);
-    printf("%d\n", i < apples_record.size() - 2);
+  std::cout << applesManager.getApples() << std::endl;
+  for (int i = 0; i < (int)apples_record.size() - 1; i++) {
+    DrawLine(10 + i * x_size + window_rect.x,
+             window_rect.y - 10 + window_rect.height -
+                 (apples_record[i] / max_apples) * (window_rect.height - 20),
+             10 + (i + 1) * x_size + window_rect.x,
+             window_rect.y - 10 + window_rect.height -
+                 (apples_record[i + 1] / max_apples) *
+                     (window_rect.height - 20),
+             nephritis);
   }
 }
