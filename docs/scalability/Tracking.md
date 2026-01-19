@@ -6,24 +6,6 @@ kanban-plugin: board
 
 ## TODO
 
-- [ ] Scale Tree
-	- [ ] Class that holds scales (upgrades)
-	- [ ] Start up pick which tree you want - initialize that tree
-	- [ ] make it spawn some time after apples in main using a sleep
-	- [ ] move nodes when you drag mouse
-	- [ ] Icon for each tree
-	    - [ ] Consumption
-	    - [ ] Expansion
-	    - [ ] Knowledge
-	    - [ ] Growth
-	    - [ ] Conquest
-	    - [ ] Greyed out for now
-	- [ ] Scale class
-	    - [ ] How much it costs
-	    - [ ] Icon
-	    - [ ] Position
-	    - [ ] Requirements
-	    - [ ] When unlocked function
 - [ ] Paper planet - Olexa game
 - [ ] Idle Clicker
 	Growth Tree
@@ -51,8 +33,6 @@ kanban-plugin: board
 	Conquest Tree
 - [ ] Strategy Game
 	Conquest Tree
-- [ ] Galaga
-	Conquest Tree
 - [ ] Forts
 	Conquest Tree
 - [ ] Tug of War
@@ -68,23 +48,26 @@ kanban-plugin: board
 
 ## WIP
 
-- [ ] Apples
-	- [x] register apples function
-	- [x] add apples function with id
-	- [x] remove apples function
-	- [x] remove apples function with id
-	- [x] get apples with id
-	- [x] get apples
-	- [ ] Display food
-	    - [x] Display food window + class
-	    - [x] save list of food over time every x seconds
-	    - [x] get max food
-	    - [x] make lines of food
-	        - [x] x = i / len
-	        - [x] y = food / max x height
-	    - [ ] show icon at end of list
-	    - [ ] ~~make window spawn after sleep in main so they have some time to play snake~~
-	    - [x] if list > 100 remove first item add last so we don't get excessive
+- [ ] Galaga
+	Conquest Tree
+- [ ] Scale Tree
+	- [ ] Class that holds scales (upgrades)
+	- [ ] Start up pick which tree you want - initialize that tree
+	- [ ] make it spawn some time after apples in main using a sleep
+	- [ ] move nodes when you drag mouse
+	- [ ] Icon for each tree
+	    - [ ] Consumption
+	    - [ ] Expansion
+	    - [ ] Knowledge
+	    - [ ] Growth
+	    - [ ] Conquest
+	    - [ ] Greyed out for now
+	- [ ] Scale class
+	    - [ ] How much it costs
+	    - [ ] Icon
+	    - [ ] Position
+	    - [ ] Requirements
+	    - [ ] When unlocked function
 
 
 ## BUGS
@@ -106,6 +89,23 @@ kanban-plugin: board
 - [ ] 1 Snake game to start
 - [ ] Windows don't start on top of each other
 - [ ] flip green and red
+- [ ] Apples
+	- [x] register apples function
+	- [x] add apples function with id
+	- [x] remove apples function
+	- [x] remove apples function with id
+	- [x] get apples with id
+	- [x] get apples
+	- [x] Display food
+	    - [x] Display food window + class
+	    - [x] save list of food over time every x seconds
+	    - [x] get max food
+	    - [x] make lines of food
+	        - [x] x = i / len
+	        - [x] y = food / max x height
+	    - [ ] show icon at end of list
+	    - [ ] ~~make window spawn after sleep in main so they have some time to play snake~~
+	    - [x] if list > 100 remove first item add last so we don't get excessive
 - [ ] green graph up red graph down
 - [ ] Windows
 	  - [ ] ~~Close button delete graphics (memory leak if you don't)~~ (windows will not  be closable until I change my mind)
