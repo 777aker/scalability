@@ -83,7 +83,7 @@ kanban-plugin: board
 	        - [x] x = i / len
 	        - [x] y = food / max x height
 	    - [ ] show icon at end of list
-	    - [ ] make window spawn after sleep in main so they have some time to play snake
+	    - [ ] ~~make window spawn after sleep in main so they have some time to play snake~~
 	    - [x] if list > 100 remove first item add last so we don't get excessive
 
 

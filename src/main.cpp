@@ -54,6 +54,7 @@ int main() {
 
     // get the top level window, and if the window was clicked on move it to top
     // of pecking order
+    top_mouse_over = nullptr;
     for (int i = windows.size() - 1; i >= 0; i--) {
       if (CheckCollisionPointRec(GetMousePosition(), windows[i]->window_rect)) {
         top_mouse_over = windows[i];

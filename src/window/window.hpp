@@ -76,6 +76,8 @@ private:
   float max_apples = 1;
 };
 
+class ScaleTree {};
+
 // global variables for managing stuff
 extern std::vector<Window *> windows;
 extern Window *top_mouse_over;
