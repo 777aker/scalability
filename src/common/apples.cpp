@@ -1,4 +1,4 @@
-#include "window.hpp"
+#include "common.hpp"
 
 #include <iostream>
 
@@ -72,7 +72,6 @@ void ApplesDisplay::draw() {
   }
 
   float x_size = (window_rect.width - 20) / apples_record.size();
-  std::cout << applesManager.getApples() << std::endl;
   Color line_color = emerald;
   for (int i = 0; i < (int)apples_record.size() - 1; i++) {
     if (apples_record[i] < apples_record[i + 1]) {

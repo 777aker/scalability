@@ -1,4 +1,4 @@
-#include "snake/snake.hpp"
+#include "snake.hpp"
 
 #include <algorithm>
 

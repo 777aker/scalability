@@ -12,8 +12,9 @@ https://creativecommons.org/publicdomain/zero/1.0/
 
 #include "resource_dir.h" // utility header for SearchAndSetResourceDir
 
-#include "snake/snake.hpp"
-#include "window/window.hpp"
+#include "common/common.hpp"
+#include "common/scale_tree.hpp"
+#include "common/snake.hpp"
 
 std::vector<Window *> windows = {};
 Window *top_mouse_over = nullptr;

@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include "window/window.hpp"
+#include "common.hpp"
 
 class Snake : public Window {
 public:

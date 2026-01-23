@@ -1,4 +1,4 @@
-#include "window.hpp"
+#include "common.hpp"
 
 Color operator+(const Color &lhs, const Color &rhs) {
   Color sum;
