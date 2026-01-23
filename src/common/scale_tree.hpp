@@ -1,5 +1,7 @@
 #pragma once
 
+#include "raylib.h"
+
 // shows upgrades
 class ScaleTree {
 public:
@@ -17,8 +19,13 @@ private:
   };
   Trees treePicked = none;
   void draw_conquest();
+  Texture2D conquestTex;
   void draw_consumption();
+  Texture2D consumptionTex;
   void draw_expansion();
+  Texture2D expansionTex;
   void draw_growth();
+  Texture2D growthTex;
   void draw_knowledge();
+  Texture2D knowledgeTex;
 };

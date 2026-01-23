@@ -39,6 +39,7 @@ int main() {
   windows.push_back((Window *)&applesDisplay);
   Snake snake1(600, 400);
   windows.push_back((Window *)&snake1);
+  ScaleTree scaleTree;
 
   // game loop
   while (!WindowShouldClose()) // run the loop until the user presses ESCAPE or
@@ -73,6 +74,8 @@ int main() {
       window->draw_window();
       window->draw();
     }
+
+    scaleTree.draw();
 
     // end the frame and get ready for the next one  (display frame, poll input,
     // etc...)
