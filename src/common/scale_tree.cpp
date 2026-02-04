@@ -3,24 +3,23 @@
 
 ScaleTree::ScaleTree() {
   Image image;
-  image = LoadImage("resources/tree_images/conquest.png");
-  ImageResize(&image, 100, 100);
+  image = LoadImage("tree_images/conquest.png");
   conquestTex = LoadTextureFromImage(image);
   UnloadImage(image);
-  image = LoadImage("resources/tree_images/consumption.png");
-  ImageResize(&image, 100, 100);
+
+  image = LoadImage("tree_images/consumption.png");
   consumptionTex = LoadTextureFromImage(image);
   UnloadImage(image);
-  image = LoadImage("resources/tree_images/expansion.png");
-  ImageResize(&image, 100, 100);
+
+  image = LoadImage("tree_images/expansion.png");
   expansionTex = LoadTextureFromImage(image);
   UnloadImage(image);
-  image = LoadImage("resources/tree_images/growth.png");
-  ImageResize(&image, 100, 100);
+
+  image = LoadImage("tree_images/growth.png");
   growthTex = LoadTextureFromImage(image);
   UnloadImage(image);
-  image = LoadImage("resources/tree_images/knowledge.png");
-  ImageResize(&image, 100, 100);
+
+  image = LoadImage("tree_images/knowledge.png");
   knowledgeTex = LoadTextureFromImage(image);
   UnloadImage(image);
 }
@@ -29,10 +28,14 @@ void ScaleTree::draw() {
   switch (treePicked) {
   case none:
     // draw 5 options when clicked select the tree to display
-    DrawTexture(conquestTex, 800, 800, WHITE);
-    DrawTexture(consumptionTex, 900, 800, WHITE);
-    DrawTexture(expansionTex, 800, 900, WHITE);
-    DrawTexture(growthTex, 900, 900, WHITE);
+    DrawTexturePro(conquestTex, {0, 0, 8, 8}, {800, 800, 100, 100}, {0, 0}, 0,
+                   WHITE);
+    DrawTexturePro(consumptionTex, {0, 0, 8, 8}, {900, 800, 100, 100}, {0, 0},
+                   0, WHITE);
+    DrawTexturePro(expansionTex, {0, 0, 8, 8}, {800, 900, 100, 100}, {0, 0}, 0,
+                   WHITE);
+    DrawTexturePro(growthTex, {0, 0, 8, 8}, {900, 900, 100, 100}, {0, 0}, 0,
+                   WHITE);
     break;
   case conquest:
     draw_conquest();

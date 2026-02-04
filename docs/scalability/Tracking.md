@@ -51,7 +51,6 @@ kanban-plugin: board
 - [ ] Galaga
 	Conquest Tree
 - [ ] Scale Tree
-	- [ ] Class that holds scales (upgrades)
 	- [ ] Start up pick which tree you want - initialize that tree
 	- [ ] make it spawn some time after apples in main using a sleep
 	- [ ] move nodes when you drag mouse
