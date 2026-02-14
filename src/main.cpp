@@ -37,7 +37,7 @@ int main() {
 
   ApplesDisplay applesDisplay;
   windows.push_back((Window *)&applesDisplay);
-  Snake snake1(600, 400);
+  Snake snake1(600, 300);
   windows.push_back((Window *)&snake1);
   ScaleTree scaleTree;
 

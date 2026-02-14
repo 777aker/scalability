@@ -27,15 +27,7 @@ ScaleTree::ScaleTree() {
 void ScaleTree::draw() {
   switch (treePicked) {
   case none:
-    // draw 5 options when clicked select the tree to display
-    DrawTexturePro(conquestTex, {0, 0, 8, 8}, {800, 800, 100, 100}, {0, 0}, 0,
-                   WHITE);
-    DrawTexturePro(consumptionTex, {0, 0, 8, 8}, {900, 800, 100, 100}, {0, 0},
-                   0, WHITE);
-    DrawTexturePro(expansionTex, {0, 0, 8, 8}, {800, 900, 100, 100}, {0, 0}, 0,
-                   WHITE);
-    DrawTexturePro(growthTex, {0, 0, 8, 8}, {900, 900, 100, 100}, {0, 0}, 0,
-                   WHITE);
+    draw_none();
     break;
   case conquest:
     draw_conquest();
@@ -52,6 +44,62 @@ void ScaleTree::draw() {
   case knowledge:
     draw_knowledge();
     break;
+  }
+}
+
+void ScaleTree::draw_none() {
+  // draw 5 options when clicked select the tree to display
+  Color baseColor = clouds;
+  Color highlighted = asbestos;
+
+  Color backgroundColor = wet_asphalt;
+  Rectangle backgroundRect = {750, 750, 350, 350};
+  DrawRectangleRec(backgroundRect, backgroundColor);
+
+  Rectangle conquestRect = {800, 800, 100, 100};
+  if (CheckCollisionPointRec(GetMousePosition(), conquestRect)) {
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+      treePicked = conquest;
+    }
+    DrawTexturePro(conquestTex, {0, 0, 8, 8}, conquestRect, {0, 0}, 0,
+                   highlighted);
+  } else {
+    DrawTexturePro(conquestTex, {0, 0, 8, 8}, conquestRect, {0, 0}, 0,
+                   baseColor);
+  }
+
+  Rectangle consumptionRect = {950, 800, 100, 100};
+  if (CheckCollisionPointRec(GetMousePosition(), consumptionRect)) {
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+      treePicked = consumption;
+    }
+    DrawTexturePro(consumptionTex, {0, 0, 8, 8}, consumptionRect, {0, 0}, 0,
+                   highlighted);
+  } else {
+    DrawTexturePro(consumptionTex, {0, 0, 8, 8}, consumptionRect, {0, 0}, 0,
+                   baseColor);
+  }
+
+  Rectangle expansionRect = {800, 950, 100, 100};
+  if (CheckCollisionPointRec(GetMousePosition(), expansionRect)) {
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+      treePicked = expansion;
+    }
+    DrawTexturePro(expansionTex, {0, 0, 8, 8}, expansionRect, {0, 0}, 0,
+                   highlighted);
+  } else {
+    DrawTexturePro(expansionTex, {0, 0, 8, 8}, expansionRect, {0, 0}, 0,
+                   baseColor);
+  }
+
+  Rectangle growthRect = {950, 950, 100, 100};
+  if (CheckCollisionPointRec(GetMousePosition(), growthRect)) {
+    if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+      treePicked = growth;
+    }
+    DrawTexturePro(growthTex, {0, 0, 8, 8}, growthRect, {0, 0}, 0, highlighted);
+  } else {
+    DrawTexturePro(growthTex, {0, 0, 8, 8}, growthRect, {0, 0}, 0, baseColor);
   }
 }
 
