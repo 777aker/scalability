@@ -6,43 +6,11 @@ kanban-plugin: board
 
 ## TODO
 
-- [ ] Paper planet - Olexa game
-- [ ] Idle Clicker
-	Growth Tree
 - [ ] Mandelbra Display
 	Growth Tree
-- [ ] Terraria
-	Expansion Tree
-- [ ] Crafting
-	Expansion Tree
-- [ ] Town Management
-	Expansion Tree
-- [ ] Logistics Management
-	Expansion Tree
-- [ ] Strikefleet Omega
-	Expansion Tree
-- [ ] Shark
-	Consumption Tree
-- [ ] Solar 2
-	Consumption Tree
-- [ ] Destroy Planet
-	Consumption Tree
-- [ ] Bullet Heaven
-	Conquest Tree
-- [ ] Chess
-	Conquest Tree
-- [ ] Strategy Game
-	Conquest Tree
-- [ ] Forts
-	Conquest Tree
-- [ ] Tug of War
-	Conquest Tree
-- [ ] Space Strategy
-	Conquest Tree
 - [ ] Map Display
 	Conquest Tree
 - [ ] Storage = food drop minigame for keeping food on death
-- [ ] Penguin Learn to Fly
 - [ ] think about cryptography / shenanigans that open knowledge tree
 
 
@@ -50,23 +18,31 @@ kanban-plugin: board
 
 - [ ] Galaga
 	Conquest Tree
+	- [ ] the little ship that could
+	- [ ] bullets
+	- [ ] random enemies
+		- [ ] enemies die on hit
+		- [ ] enemies shoot back
 - [ ] Scale Tree
-	- [ ] Start up pick which tree you want - initialize that tree
-	- [ ] make it spawn some time after apples in main using a sleep
+	- [x] Start up pick which tree you want - initialize that tree
+	- [x] make it spawn some time after apples in main using a sleep
 	- [ ] move nodes when you drag mouse
-	- [ ] Icon for each tree
-	    - [ ] Consumption
-	    - [ ] Expansion
-	    - [ ] Knowledge
-	    - [ ] Growth
-	    - [ ] Conquest
-	    - [ ] Greyed out for now
+	- [x] Icon for each tree
+	    - [x] Consumption
+	    - [x] Expansion
+	    - [x] Knowledge
+	    - [x] Growth
+	    - [x] Conquest
+	    - [x] Greyed out for now
 	- [ ] Scale class
 	    - [ ] How much it costs
 	    - [ ] Icon
 	    - [ ] Position
 	    - [ ] Requirements
 	    - [ ] When unlocked function
+- [ ] Bullet Heaven
+	- [ ] brainstorm
+		- [ ] vampire survivors
 
 
 ## BUGS

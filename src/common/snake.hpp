@@ -8,10 +8,10 @@ class Snake : public Window {
 public:
   Snake(int txpos, int typos);
   void draw();
-  int make_new_apples = 5;
-  void restart();
 
 private:
+  int make_new_apples = 5;
+  void restart();
   std::vector<Rectangle> snake_body = {};
   Vector2 snake_dir = {0, 1};
   float time_passed = 0;
