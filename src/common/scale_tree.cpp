@@ -60,6 +60,7 @@ void ScaleTree::draw_none() {
   if (CheckCollisionPointRec(GetMousePosition(), conquestRect)) {
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
       treePicked = conquest;
+      unload_textures();
     }
     DrawTexturePro(conquestTex, {0, 0, 8, 8}, conquestRect, {0, 0}, 0,
                    highlighted);
@@ -72,6 +73,7 @@ void ScaleTree::draw_none() {
   if (CheckCollisionPointRec(GetMousePosition(), consumptionRect)) {
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
       treePicked = consumption;
+      unload_textures();
     }
     DrawTexturePro(consumptionTex, {0, 0, 8, 8}, consumptionRect, {0, 0}, 0,
                    highlighted);
@@ -84,6 +86,7 @@ void ScaleTree::draw_none() {
   if (CheckCollisionPointRec(GetMousePosition(), expansionRect)) {
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
       treePicked = expansion;
+      unload_textures();
     }
     DrawTexturePro(expansionTex, {0, 0, 8, 8}, expansionRect, {0, 0}, 0,
                    highlighted);
@@ -96,11 +99,20 @@ void ScaleTree::draw_none() {
   if (CheckCollisionPointRec(GetMousePosition(), growthRect)) {
     if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
       treePicked = growth;
+      unload_textures();
     }
     DrawTexturePro(growthTex, {0, 0, 8, 8}, growthRect, {0, 0}, 0, highlighted);
   } else {
     DrawTexturePro(growthTex, {0, 0, 8, 8}, growthRect, {0, 0}, 0, baseColor);
   }
+}
+
+void ScaleTree::unload_textures() {
+  UnloadTexture(conquestTex);
+  UnloadTexture(consumptionTex);
+  UnloadTexture(expansionTex);
+  UnloadTexture(growthTex);
+  UnloadTexture(knowledgeTex);
 }
 
 void ScaleTree::draw_conquest() {}

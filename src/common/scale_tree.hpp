@@ -19,6 +19,7 @@ private:
   };
   Trees treePicked = none;
   void draw_none();
+  void unload_textures();
   void draw_conquest();
   Texture2D conquestTex;
   void draw_consumption();
