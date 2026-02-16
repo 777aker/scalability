@@ -4,10 +4,10 @@
 #include <vector>
 
 struct ScaleNode {
-  int posx, posy;
-  std::string name;
+  float posx, posy;
   int applesCost;
   std::string iconPath;
   std::vector<std::string> requiredNodes;
   void (*nodeUnlockedCallback)();
+  bool unlocked;
 };

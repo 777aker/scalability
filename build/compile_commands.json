@@ -42,6 +42,31 @@
       "-std=c++17",
       "-c",
       "-o",
+      "obj/x64/Debug/scalability/scale_node.o",
+      "../../src/common/scale_node.hpp"
+    ],
+    "directory": "/home/kelley/Desktop/scalability/build/build_files",
+    "file": "/home/kelley/Desktop/scalability/src/common/scale_node.hpp",
+    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/scale_node.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_GLFW_X11",
+      "-I../../src",
+      "-I../../include",
+      "-I../external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++17",
+      "-c",
+      "-o",
       "obj/x64/Debug/scalability/scale_tree.o",
       "../../src/common/scale_tree.hpp"
     ],
@@ -73,6 +98,56 @@
     "directory": "/home/kelley/Desktop/scalability/build/build_files",
     "file": "/home/kelley/Desktop/scalability/src/common/snake.hpp",
     "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/snake.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_GLFW_X11",
+      "-I../../src",
+      "-I../../include",
+      "-I../external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "obj/x64/Debug/scalability/conquest_nodes.o",
+      "../../src/conquest/conquest_nodes.hpp"
+    ],
+    "directory": "/home/kelley/Desktop/scalability/build/build_files",
+    "file": "/home/kelley/Desktop/scalability/src/conquest/conquest_nodes.hpp",
+    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/conquest_nodes.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_GLFW_X11",
+      "-I../../src",
+      "-I../../include",
+      "-I../external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "obj/x64/Debug/scalability/space_shooter.o",
+      "../../src/conquest/space_shooter.hpp"
+    ],
+    "directory": "/home/kelley/Desktop/scalability/build/build_files",
+    "file": "/home/kelley/Desktop/scalability/src/conquest/space_shooter.hpp",
+    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/space_shooter.o"
   },
   {
     "arguments": [
@@ -198,6 +273,31 @@
     "directory": "/home/kelley/Desktop/scalability/build/build_files",
     "file": "/home/kelley/Desktop/scalability/src/common/window.cpp",
     "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/window.o"
+  },
+  {
+    "arguments": [
+      "g++",
+      "-MD",
+      "-MP",
+      "-DDEBUG",
+      "-DPLATFORM_DESKTOP",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-D_GLFW_X11",
+      "-I../../src",
+      "-I../../include",
+      "-I../external/raylib-master/src",
+      "-m64",
+      "-Wshadow",
+      "-g",
+      "-std=c++17",
+      "-c",
+      "-o",
+      "obj/x64/Debug/scalability/space_shooter.o",
+      "../../src/conquest/space_shooter.cpp"
+    ],
+    "directory": "/home/kelley/Desktop/scalability/build/build_files",
+    "file": "/home/kelley/Desktop/scalability/src/conquest/space_shooter.cpp",
+    "output": "/home/kelley/Desktop/scalability/build/build_files/obj/x64/Debug/scalability/space_shooter.o"
   },
   {
     "arguments": [

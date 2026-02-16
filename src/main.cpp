@@ -69,13 +69,13 @@ int main() {
       }
     }
 
+    scaleTree.draw();
+
     // call all the windows draw functions
     for (Window *window : windows) {
       window->draw_window();
       window->draw();
     }
-
-    scaleTree.draw();
 
     // end the frame and get ready for the next one  (display frame, poll input,
     // etc...)

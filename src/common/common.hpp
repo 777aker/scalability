@@ -25,6 +25,7 @@ const Color black = {0, 0, 0, 255};            // rgb(0, 0, 0)
 // extra operator for colors to make life easier
 Color operator+(const Color &lhs, const Color &rhs);
 Color operator-(const Color &lhs, const Color &rhs);
+bool operator==(const Color &lhs, const Color &rhs);
 
 // base class that makes a window for a game
 class Window {

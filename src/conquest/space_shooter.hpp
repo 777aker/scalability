@@ -10,4 +10,4 @@ public:
 private:
   void restart();
   Rectangle ship;
-}
+};

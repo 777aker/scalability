@@ -1,4 +1,5 @@
 #include "scale_tree.hpp"
+#include "../conquest/conquest_nodes.hpp"
 #include "common.hpp"
 
 ScaleTree::ScaleTree() {
@@ -115,7 +116,90 @@ void ScaleTree::unload_textures() {
   UnloadTexture(knowledgeTex);
 }
 
-void ScaleTree::draw_conquest() {}
+void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
+  const float node_radius = 25;
+  const Color node_locked = black;
+  const Color node_unlockable = asbestos;
+  const Color node_hovered = clouds;
+  const Color node_unlocked = nephritis;
+  const float node_line_thickness = 5;
+
+  // TODO: I hate how this had to be done with two of the same for loops
+  // figure out something better
+  for (auto &node : treeMap) {
+    bool requirementsMet = true;
+    // get if requirements for node met
+    for (std::string required : node.second.requiredNodes) {
+      if (!treeMap[required].unlocked) {
+        requirementsMet = false;
+      }
+    }
+    // get what color the node should be
+    Color node_color = node_locked;
+    if (node.second.unlocked) {
+      node_color = node_unlocked;
+    } else if (applesManager.getApples() >= node.second.applesCost &&
+               requirementsMet) {
+      Vector2 center = {node.second.posx, node.second.posy};
+      if (CheckCollisionPointCircle(GetMousePosition(), center, node_radius)) {
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+          node.second.unlocked = true;
+          node_color = node_unlocked;
+          applesManager.removeApples(node.second.applesCost);
+        } else {
+          node_color = node_hovered;
+        }
+      } else {
+        node_color = node_unlockable;
+      }
+    }
+    // draw the lines for requirements
+    for (std::string required : node.second.requiredNodes) {
+      Vector2 start = {node.second.posx, node.second.posy};
+      Vector2 end = {treeMap[required].posx, treeMap[required].posy};
+      Color line_color = node_color;
+      if (line_color == node_locked) {
+        if (treeMap[required].unlocked) {
+          line_color = node_unlocked;
+        }
+      }
+      DrawLineEx(start, end, node_line_thickness, line_color);
+    }
+  }
+
+  for (auto &node : treeMap) {
+    bool requirementsMet = true;
+    // get if requirements for node met
+    for (std::string required : node.second.requiredNodes) {
+      if (!treeMap[required].unlocked) {
+        requirementsMet = false;
+      }
+    }
+    // get what color the node should be
+    Color node_color = node_locked;
+    if (node.second.unlocked) {
+      node_color = node_unlocked;
+    } else if (applesManager.getApples() >= node.second.applesCost &&
+               requirementsMet) {
+      Vector2 center = {node.second.posx, node.second.posy};
+      if (CheckCollisionPointCircle(GetMousePosition(), center, node_radius)) {
+        if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+          node.second.unlocked = true;
+          node_color = node_unlocked;
+          applesManager.removeApples(node.second.applesCost);
+        } else {
+          node_color = node_hovered;
+        }
+      } else {
+        node_color = node_unlockable;
+      }
+    }
+    // draw the node
+    DrawCircle(node.second.posx, node.second.posy, node_radius, node_color);
+  }
+}
+
+void ScaleTree::draw_conquest() { draw_a_tree(conquestNodes); }
 
 void ScaleTree::draw_consumption() {}
 

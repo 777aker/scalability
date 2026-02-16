@@ -18,6 +18,10 @@ Color operator-(const Color &lhs, const Color &rhs) {
   return sum;
 }
 
+bool operator==(const Color &lhs, const Color &rhs) {
+  return (lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b && lhs.a == rhs.a);
+}
+
 Window::Window(std::string window_title, float width, float height, float xpos,
                float ypos, Color window_background)
     : title(window_title), background(window_background) {
