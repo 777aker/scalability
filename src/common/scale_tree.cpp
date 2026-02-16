@@ -116,7 +116,7 @@ void ScaleTree::unload_textures() {
   UnloadTexture(knowledgeTex);
 }
 
-void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
+void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> *treeMap) {
   const float node_radius = 25;
   const Color node_locked = black;
   const Color node_unlockable = asbestos;
@@ -126,11 +126,11 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
 
   // TODO: I hate how this had to be done with two of the same for loops
   // figure out something better
-  for (auto &node : treeMap) {
+  for (auto &node : *treeMap) {
     bool requirementsMet = true;
     // get if requirements for node met
     for (std::string required : node.second.requiredNodes) {
-      if (!treeMap[required].unlocked) {
+      if (!(*treeMap)[required].unlocked) {
         requirementsMet = false;
       }
     }
@@ -156,10 +156,10 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
     // draw the lines for requirements
     for (std::string required : node.second.requiredNodes) {
       Vector2 start = {node.second.posx, node.second.posy};
-      Vector2 end = {treeMap[required].posx, treeMap[required].posy};
+      Vector2 end = {(*treeMap)[required].posx, (*treeMap)[required].posy};
       Color line_color = node_color;
       if (line_color == node_locked) {
-        if (treeMap[required].unlocked) {
+        if ((*treeMap)[required].unlocked) {
           line_color = node_unlocked;
         }
       }
@@ -167,11 +167,11 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
     }
   }
 
-  for (auto &node : treeMap) {
+  for (auto &node : *treeMap) {
     bool requirementsMet = true;
     // get if requirements for node met
     for (std::string required : node.second.requiredNodes) {
-      if (!treeMap[required].unlocked) {
+      if (!(*treeMap)[required].unlocked) {
         requirementsMet = false;
       }
     }
@@ -199,7 +199,7 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> treeMap) {
   }
 }
 
-void ScaleTree::draw_conquest() { draw_a_tree(conquestNodes); }
+void ScaleTree::draw_conquest() { draw_a_tree(&conquestNodes); }
 
 void ScaleTree::draw_consumption() {}
 

@@ -22,7 +22,7 @@ private:
   Trees treePicked = none;
   void draw_none();
   void unload_textures();
-  void draw_a_tree(std::map<std::string, ScaleNode> treeMap);
+  void draw_a_tree(std::map<std::string, ScaleNode> *treeMap);
 
   void draw_conquest();
   Texture2D conquestTex;
