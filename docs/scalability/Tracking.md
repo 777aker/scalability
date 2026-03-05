@@ -27,6 +27,9 @@ kanban-plugin: board
 	- [x] Start up pick which tree you want - initialize that tree
 	- [x] make it spawn some time after apples in main using a sleep
 	- [ ] move nodes when you drag mouse
+	- [ ] display icon for each node
+	- [ ] Hover over display required food and have food
+	- [ ] fix node colors when can't unlock
 	- [x] Icon for each tree
 	    - [x] Consumption
 	    - [x] Expansion
@@ -34,12 +37,12 @@ kanban-plugin: board
 	    - [x] Growth
 	    - [x] Conquest
 	    - [x] Greyed out for now
-	- [ ] Scale class
-	    - [ ] How much it costs
-	    - [ ] Icon
-	    - [ ] Position
-	    - [ ] Requirements
-	    - [ ] When unlocked function
+	- [x] Scale class
+	    - [x] How much it costs
+	    - [x] Icon
+	    - [x] Position
+	    - [x] Requirements
+	    - [x] When unlocked function
 - [ ] Bullet Heaven
 	- [ ] brainstorm
 		- [ ] vampire survivors

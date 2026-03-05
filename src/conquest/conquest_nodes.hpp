@@ -12,7 +12,10 @@ void unlockTugOfWar() {}
 
 void unlockStrategy() {}
 
-void unlockSpaceShooter() {}
+void unlockSpaceShooter() {
+  SpaceShooter *spaceShooter = new SpaceShooter(800, 1000);
+  windows.push_back(std::move(spaceShooter));
+}
 
 void unlockSpaceStrategy() {}
 

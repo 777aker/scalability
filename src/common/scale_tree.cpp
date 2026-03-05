@@ -146,6 +146,7 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> *treeMap) {
           node.second.unlocked = true;
           node_color = node_unlocked;
           applesManager.removeApples(node.second.applesCost);
+          node.second.nodeUnlockedCallback();
         } else {
           node_color = node_hovered;
         }
@@ -187,6 +188,7 @@ void ScaleTree::draw_a_tree(std::map<std::string, ScaleNode> *treeMap) {
           node.second.unlocked = true;
           node_color = node_unlocked;
           applesManager.removeApples(node.second.applesCost);
+          node.second.nodeUnlockedCallback();
         } else {
           node_color = node_hovered;
         }
