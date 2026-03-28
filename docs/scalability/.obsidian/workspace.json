@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4093968ea3f57139",
+        "id": "9950812919370a86",
         "type": "tabs",
         "children": [
           {
-            "id": "80a6137f4eb88650",
+            "id": "2d694dbaccfb6299",
             "type": "leaf",
             "state": {
               "type": "kanban",
@@ -101,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "task_managing.md",
+                "file": "Tracking.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for task_managing"
+              "title": "Backlinks for Tracking"
             }
           },
           {
@@ -177,13 +177,16 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "80a6137f4eb88650",
+  "active": "2d694dbaccfb6299",
   "lastOpenFiles": [
-    "Penguin Learn to Fly.md",
     "Tracking.md",
-    "Knowledge/Chess.md",
-    "Conquest/Space Strategy.md",
     "Conquest/Galaga.md",
+    "Knowledge/Chess.md",
+    "Scalability/Food Drop Minigame.md",
+    "Scalability/AStar.md",
+    "Paper Planet.md",
+    "Penguin Learn to Fly.md",
+    "Conquest/Space Strategy.md",
     "Conquest/Strategy Game.md",
     "Conquest/Tug of War.md",
     "Conquest/Forts.md",
@@ -199,9 +202,6 @@
     "Consumption/Destroy Planet.md",
     "Consumption/Shark.md",
     "Expansion/Strikefleet Omega.md",
-    "Scalability/Food Drop Minigame.md",
-    "Paper Planet.md",
-    "Scalability/AStar.md",
     "Scalability",
     "Knowledge",
     "Conquest",

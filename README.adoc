@@ -1,13 +1,3 @@
 # Scalability
 
-Web based incremental game using Pixi.js.
-
-## Running
-
-`npm install`
-`npx vite`
-
-## Appendix
-
-Thanks to this person for helping with setup and getting started:
-https://waelyasmina.net/articles/pixi-js-tutorial-for-complete-beginners/
+## 
