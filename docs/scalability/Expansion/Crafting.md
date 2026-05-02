@@ -1,1 +1,0 @@
-Crafting mini-game for acquiring more complex items and tools. Helps other games but not required.

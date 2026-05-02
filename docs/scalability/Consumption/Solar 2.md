@@ -1,1 +1,0 @@
-Like Solar 2 you run around absorbing planets and solar systems

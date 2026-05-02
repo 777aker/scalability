@@ -1,1 +1,0 @@
-Get good. Pieces have trails that leave behind themselves based on how many pieces they've destroyed.

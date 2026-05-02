@@ -1,1 +1,0 @@
-Manage conquering the stars

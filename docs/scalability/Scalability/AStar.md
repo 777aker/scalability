@@ -1,1 +1,0 @@
-Snake controlled through AStar
