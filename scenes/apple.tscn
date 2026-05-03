@@ -2,7 +2,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ynh5"]
 
-[node name="Apple" type="Node2D" unique_id=2054210446]
+[node name="Apple" type="Node2D" unique_id=2054210446 groups=["apple"]]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1527916862 groups=["apple"]]
 

@@ -105,3 +105,4 @@ text = " X "
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TitleBar/TitleBarControl" to="." method="_on_title_bar_control_mouse_entered"]
 [connection signal="mouse_exited" from="TitleBar/TitleBarControl" to="." method="_on_title_bar_control_mouse_exited"]
+[connection signal="pressed" from="TitleBar/TitleBarControl/CloseContainer/Close" to="." method="_on_close_pressed"]

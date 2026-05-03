@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cv3fg38xowdc5" path="res://scenes/snake/snake_manager.gd" id="2_h1wbu"]
 
 [node name="Snake" unique_id=1962052330 instance=ExtResource("1_uqw23")]
-custom_minimum_size = Vector2(500, 536)
-window_size = Vector2(510, 536)
+custom_minimum_size = Vector2(410, 436)
+window_size = Vector2(410, 436)
 
 [node name="SnakeManager" type="Node2D" parent="." index="1" unique_id=1677261364]
 script = ExtResource("2_h1wbu")
