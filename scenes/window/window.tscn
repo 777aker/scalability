@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d2l6o140f3vdo"]
+
+[ext_resource type="Script" uid="uid://dyoevngevobgk" path="res://scenes/window/window.gd" id="1_72cl8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72cl8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.7411765, 0.7647059, 0.78039217, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0osky"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.7411765, 0.7647059, 0.78039217, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="Window" type="Panel" unique_id=1962052330]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_72cl8")
+script = ExtResource("1_72cl8")
+window_size = Vector2(250, 250)
+window_title = "Scalability"
+
+[node name="TitleBar" type="Panel" parent="." unique_id=1481640282]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0osky")
+
+[node name="TitleBarControl" type="Control" parent="TitleBar" unique_id=141634554]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="MarginContainer" parent="TitleBar/TitleBarControl" unique_id=543479464]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 92.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="WindowTitle" type="Label" parent="TitleBar/TitleBarControl/TitleContainer" unique_id=1900934124]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.17254902, 0.24313726, 0.3137255, 1)
+text = "Placeholder"
+
+[node name="CloseContainer" type="MarginContainer" parent="TitleBar/TitleBarControl" unique_id=297967043]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Close" type="Button" parent="TitleBar/TitleBarControl/CloseContainer" unique_id=197378609]
+layout_mode = 2
+text = " X "
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TitleBar/TitleBarControl" to="." method="_on_title_bar_control_mouse_entered"]
+[connection signal="mouse_exited" from="TitleBar/TitleBarControl" to="." method="_on_title_bar_control_mouse_exited"]
