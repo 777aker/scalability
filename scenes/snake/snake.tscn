@@ -15,5 +15,6 @@ wait_time = 0.5
 autostart = true
 
 [node name="GameOver" type="Timer" parent="SnakeManager" index="1" unique_id=1413542972]
+one_shot = true
 
 [connection signal="timeout" from="SnakeManager/SegmentSpawner" to="SnakeManager" method="_on_segment_spawner_timeout"]
