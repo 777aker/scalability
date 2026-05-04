@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not PARENT_WINDOW.selected_window:
 		return
 	if Input.is_action_pressed("down"):
@@ -38,7 +38,7 @@ func spawn_segment() -> void:
 		return
 	new_segment.position = head_pos
 	new_segment.area_entered.connect(area_entered_segment)
-	add_child(new_segment)
+	add_child.call_deferred(new_segment)
 	if body.size() > current_length:
 		var deleteme = body.pop_front()
 		deleteme.queue_free()
@@ -49,7 +49,7 @@ func spawn_apple() -> void:
 	var apple_pos_y = randi_range(3, 19) * GRID_SIZE # has a little offset from title bar
 	var new_apple = apple.instantiate()
 	new_apple.position = Vector2(apple_pos_x, apple_pos_y)
-	add_child(new_apple)
+	add_child.call_deferred(new_apple)
 
 
 func _on_segment_spawner_timeout() -> void:
@@ -57,6 +57,7 @@ func _on_segment_spawner_timeout() -> void:
 
 
 func game_over() -> void:
+	AppleManager.apples -= 5
 	for segment in body:
 		segment.queue_free()
 	body.clear()
@@ -71,9 +72,12 @@ func game_over() -> void:
 
 
 func area_entered_segment(area: Area2D) -> void:
+	if self.get_parent() != area.get_parent():
+		return
 	if area.get_groups().has("snakebody"):
 		game_over()
 	if area.get_groups().has("apple"):
 		current_length += 1
 		area.get_parent().queue_free()
+		AppleManager.apples += 1
 		spawn_apple()

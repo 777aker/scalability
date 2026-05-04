@@ -21,16 +21,19 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if mouse_inside and Input.is_action_pressed("mouseleft"):
-		selected_window = true
-	elif Input.is_action_pressed("mouseleft"):
-		selected_window = false
-	
-	if (mouse_title or dragging) and Input.is_action_pressed("mouseleft"):
-		dragging = true
-		position = get_global_mouse_position() - Vector2(get_global_rect().size.x / 2.0, title_bar_node.get_global_rect().size.y / 2.0)
-	elif not Input.is_action_pressed("mouseleft"):
+func _process(_delta: float) -> void:
+	if Input.is_action_pressed("mouseleft"):
+		if mouse_inside:
+			selected_window = true
+			get_parent().move_child(self, -1)
+		elif mouse_title or dragging:
+			dragging = true
+			selected_window = true
+			get_parent().move_child(self, -1)
+			position = get_global_mouse_position() - Vector2(get_global_rect().size.x / 2.0, title_bar_node.get_global_rect().size.y / 2.0)
+		else:
+			selected_window = false
+	else:
 		dragging = false
 
 

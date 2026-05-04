@@ -15,6 +15,10 @@ run/main_scene="uid://dhmf045up5w23"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AppleManager="*uid://dscujjt8lkeeu"
+
 [global_group]
 
 snakebody=""

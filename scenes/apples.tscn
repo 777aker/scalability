@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c2snkyl5nb2iv"]
+
+[ext_resource type="PackedScene" uid="uid://d2l6o140f3vdo" path="res://scenes/window/window.tscn" id="1_cridi"]
+
+[node name="Apples" unique_id=1962052330 instance=ExtResource("1_cridi")]
+custom_minimum_size = Vector2(200, 236)
+window_size = Vector2(200, 236)
+window_title = "Apples"
+
+[node name="AppleGraph" type="Control" parent="." index="1" unique_id=9946920]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Timer" type="Timer" parent="AppleGraph" index="0" unique_id=2138703774]
+autostart = true
