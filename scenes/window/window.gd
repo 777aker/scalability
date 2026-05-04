@@ -16,7 +16,6 @@ func _ready() -> void:
 	custom_minimum_size = window_size
 	window_title_node.text = window_title
 	if starting_position:
-		print("has position")
 		position = starting_position
 
 

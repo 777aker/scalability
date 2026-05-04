@@ -8,6 +8,7 @@ var current_length: int = 1
 const GRID_SIZE = 20
 const apple = preload("res://scenes/apple.tscn")
 @onready var PARENT_WINDOW = $".."
+@onready var game_over_timer = $GameOver
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +58,9 @@ func _on_segment_spawner_timeout() -> void:
 
 
 func game_over() -> void:
+	if not game_over_timer.is_stopped():
+		return
+	game_over_timer.start(0.5)
 	AppleManager.apples -= 5
 	for segment in body:
 		segment.queue_free()
@@ -72,8 +76,6 @@ func game_over() -> void:
 
 
 func area_entered_segment(area: Area2D) -> void:
-	if self.get_parent() != area.get_parent():
-		return
 	if area.get_groups().has("snakebody"):
 		game_over()
 	if area.get_groups().has("apple"):

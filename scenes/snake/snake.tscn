@@ -10,8 +10,10 @@ window_size = Vector2(410, 436)
 [node name="SnakeManager" type="Node2D" parent="." index="1" unique_id=1677261364]
 script = ExtResource("2_h1wbu")
 
-[node name="segment_spawner" type="Timer" parent="SnakeManager" index="0" unique_id=1994404781]
+[node name="SegmentSpawner" type="Timer" parent="SnakeManager" index="0" unique_id=1994404781]
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="SnakeManager/segment_spawner" to="SnakeManager" method="_on_segment_spawner_timeout"]
+[node name="GameOver" type="Timer" parent="SnakeManager" index="1" unique_id=1413542972]
+
+[connection signal="timeout" from="SnakeManager/SegmentSpawner" to="SnakeManager" method="_on_segment_spawner_timeout"]
