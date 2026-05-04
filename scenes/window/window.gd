@@ -5,6 +5,8 @@ extends Panel
 @onready var title_bar_node = $TitleBar
 @onready var window_title_node = $TitleBar/TitleBarControl/TitleContainer/WindowTitle
 @export var window_title: String
+const SELECTED_STYLE = preload("res://styles/window_hightlighted.tres")
+const DEFAULT_STYLE = preload("res://styles/window_default.tres")
 
 var mouse_inside: bool = false
 var mouse_title: bool = false
@@ -24,14 +26,17 @@ func _process(_delta: float) -> void:
 	if Input.is_action_pressed("mouseleft"):
 		if mouse_inside:
 			selected_window = true
+			self.add_theme_stylebox_override("panel", SELECTED_STYLE)
 			get_parent().move_child(self, -1)
 		elif mouse_title or dragging:
 			dragging = true
 			selected_window = true
+			self.add_theme_stylebox_override("panel", SELECTED_STYLE)
 			get_parent().move_child(self, -1)
 			position = get_global_mouse_position() - Vector2(get_global_rect().size.x / 2.0, title_bar_node.get_global_rect().size.y / 2.0)
 		else:
 			selected_window = false
+			self.add_theme_stylebox_override("panel", DEFAULT_STYLE)
 	else:
 		dragging = false
 
