@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c2snkyl5nb2iv"]
 
 [ext_resource type="PackedScene" uid="uid://d2l6o140f3vdo" path="res://scenes/window/window.tscn" id="1_cridi"]
+[ext_resource type="Script" uid="uid://bd0siqvm6iwii" path="res://scenes/apple_graph.gd" id="2_uynaf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uynaf"]
+content_margin_left = 8.0
 
 [node name="Apples" unique_id=1962052330 instance=ExtResource("1_cridi")]
 custom_minimum_size = Vector2(200, 236)
@@ -16,6 +20,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
+script = ExtResource("2_uynaf")
 
-[node name="Timer" type="Timer" parent="AppleGraph" index="0" unique_id=2138703774]
+[node name="CurrentApples" type="Label" parent="AppleGraph" index="0" unique_id=389515234]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uynaf")
+
+[node name="Timer" type="Timer" parent="AppleGraph" index="1" unique_id=2138703774]
 autostart = true
+
+[connection signal="draw" from="AppleGraph" to="AppleGraph" method="_on_draw"]
+[connection signal="timeout" from="AppleGraph/Timer" to="AppleGraph" method="_on_timer_timeout"]
