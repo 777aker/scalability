@@ -1,7 +1,6 @@
 extends Panel
 
 @export var window_size: Vector2
-@export var starting_position: Vector2
 @onready var title_bar_node = $TitleBar
 @onready var window_title_node = $TitleBar/TitleBarControl/TitleContainer/WindowTitle
 @export var window_title: String
@@ -17,8 +16,6 @@ var selected_window: bool = false
 func _ready() -> void:
 	custom_minimum_size = window_size
 	window_title_node.text = window_title
-	if starting_position:
-		position = starting_position
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

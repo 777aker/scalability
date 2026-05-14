@@ -17,13 +17,8 @@ corner_detail = 5
 
 [node name="Window" type="Panel" unique_id=1962052330]
 custom_minimum_size = Vector2(200, 200)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 200.0
+offset_bottom = 200.0
 theme_override_styles/panel = ExtResource("1_0osky")
 script = ExtResource("1_72cl8")
 window_title = "Scalability"
