@@ -1,11 +1,10 @@
 extends Panel
 
-@export var window_size: Vector2
 @onready var title_bar_node = $TitleBar
 @onready var window_title_node = $TitleBar/TitleBarControl/TitleContainer/WindowTitle
 @export var window_title: String
-const SELECTED_STYLE = preload("res://styles/window_hightlighted.tres")
-const DEFAULT_STYLE = preload("res://styles/window_default.tres")
+const SELECTED_STYLE = preload("res://scenes/window/window_hightlighted.tres")
+const DEFAULT_STYLE = preload("res://scenes/window/window_default.tres")
 
 var mouse_inside: bool = false
 var mouse_title: bool = false
@@ -14,7 +13,6 @@ var selected_window: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	custom_minimum_size = window_size
 	window_title_node.text = window_title
 
 
