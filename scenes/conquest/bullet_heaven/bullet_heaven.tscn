@@ -4,6 +4,7 @@
 [ext_resource type="StyleBox" uid="uid://pkeo8ul66x48" path="res://scenes/conquest/bullet_heaven/bullet_window.tres" id="2_fws08"]
 [ext_resource type="Shader" uid="uid://dxei0bv68pisv" path="res://scenes/conquest/bullet_heaven/bullet_heaven.gdshader" id="3_fws08"]
 [ext_resource type="Script" uid="uid://cwxqkmh0yfnvm" path="res://scenes/conquest/bullet_heaven/game_area.gd" id="4_gftnf"]
+[ext_resource type="Script" uid="uid://dc7yj4x188og0" path="res://scenes/conquest/bullet_heaven/player.gd" id="5_djc7c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gftnf"]
 shader = ExtResource("3_fws08")
@@ -25,6 +26,13 @@ anchor_bottom = 0.99
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(5, 36)
+mouse_filter = 2
 
 [node name="GameArea" type="Node2D" parent="." index="2" unique_id=1851082358]
+position = Vector2(4, 36)
 script = ExtResource("4_gftnf")
+
+[node name="Player" type="Polygon2D" parent="GameArea" index="0" unique_id=1622219311]
+position = Vector2(200, 200)
+uv = PackedVector2Array(95, 26, -22, 34, -72, 100, -65, 161, 4, 192, 82, 198, 126, 171, 154, 137, 165, 98, 153, 74, 121, 43)
+script = ExtResource("5_djc7c")

@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var PARENT_WINDOW = $".."
 var offset: Vector2 = Vector2(0, 0)
-const OFFSETSPEED: float = 0.025
+const OFFSETSPEED: float = 0.001
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
