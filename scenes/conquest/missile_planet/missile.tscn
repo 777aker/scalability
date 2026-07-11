@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dhlwdfyn20rsh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b625i"]
+
+[node name="Missile" type="Node2D" unique_id=1895971]
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=879783180]
+polygon = PackedVector2Array(10, -10, 10, 10, -10, 10, -10, -10)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=253961298]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2035370146]
+shape = SubResource("RectangleShape2D_b625i")

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c5wiaf3dkjau"]
+
+[ext_resource type="PackedScene" uid="uid://d2l6o140f3vdo" path="res://scenes/window/window.tscn" id="1_48lfc"]
+[ext_resource type="Script" uid="uid://cvbuw6v7arp88" path="res://scenes/conquest/missile_planet/planet.gd" id="2_488w1"]
+
+[node name="Window" unique_id=1962052330 instance=ExtResource("1_48lfc")]
+custom_minimum_size = Vector2(600, 600)
+window_title = "Missile Planet"
+
+[node name="Polygon2D" type="Polygon2D" parent="." index="1" unique_id=1523259965]
+position = Vector2(300, 300)
+color = Color(0.7777257, 0.37735876, 5.7756904e-07, 1)
+uv = PackedVector2Array(131, -15.5, -163, -74.5, -204, -4.5, -149, 100.5, 101, 123.5, 132, 35.5)
+script = ExtResource("2_488w1")
